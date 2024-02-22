@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Detail";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+@model Nexus.Models.Blog
+
+<div class="container">
+    <nav class="breadcrumb row" role="navigation" aria-label="breadcrumbs">
+        <div class="col-12">
+            <a href="/" title="Home">Home</a>
+
+            <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+            <a href="/blogs/news" title="">News</a>
+            <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+            <span>@Model.Name</span>
+
+        </div>
+    </nav>
+</div>
+<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <section id="shopify-section-template--15388007661731__main" class="shopify-section">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/section-blog-post.css?v=77694678877104362891640687789" rel="stylesheet" type="text/css" media="all">
+
+        <article class="article-template" itemscope="" itemtype="http://schema.org/BlogPosting">
+            <div class="container">
+                <div class="wbsingleblog">
+                    <h1 class="article-template__title text-center" itemprop="headline">@Model.Name</h1>
+                    <div class="article-template__hero-container">
+                        <img class="img-fluid mx-auto" srcset="~/Image/@Model.Image 1170w" src="~/Image/@Model.Image" loading="lazy" width="1170" height="544" alt="Ut sed felis pulvinar, pretium diam in, efficitur metus.">
+                    </div>
+                    <div class="article-template__content rte" itemprop="articleBody">
+                        <p>@Html.Raw(Model.Description)</p>
+                    </div><div class="tag-section">
+                    </div>
+                    <div class="wbbackblog center">
+                        <a href="/Blog" class="article-template__link link animate-arrow">
+                            <span class="icon-wrap">
+                                <svg viewBox="0 0 14 10" fill="none" aria-hidden="true" focusable="false" role="presentation" class="icon icon-arrow" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M8.537.808a.5.5 0 01.817-.162l4 4a.5.5 0 010 .708l-4 4a.5.5 0 11-.708-.708L11.793 5.5H1a.5.5 0 010-1h10.793L8.646 1.354a.5.5 0 01-.109-.546z" fill="currentColor">
+                                    </path>
+                                </svg>
+                            </span>
+                            Back to blog
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </section>
+</main>
+

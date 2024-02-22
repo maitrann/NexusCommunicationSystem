@@ -1,0 +1,64 @@
+﻿@using Nexus.Models.ModelView;
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h3 class="text-center"><strong>List of Bill</strong></h3>
+<br />
+<br />
+<div class="facet-filters sorting caption" style="display: inline-flex; float: right; margin-bottom: 24px">
+    <span class="facet-filters__label d-flex" style="width: 100px; align-items: center">
+        <label class="m-0" for="SortBy">Sort by:</label>
+    </span>
+    <div class="select">
+        <select name="SelectPrice" class="facet-filters__sort select__select caption-large" id="SelectPrice" aria-describedby="a11y-refresh-page-message">
+            <option value="0">All Bills</option>
+        </select>
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z">
+            </path>
+        </svg>
+
+    </div>
+    <noscript>
+        <button type="submit" class="facets__button-no-js button">Sort</button>
+    </noscript>
+</div>
+
+<div id="main-cart-items" data-id="template--15388007727267__cart-items">
+    <div class="js-contents">
+        <table class="cart-items table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" style="width:auto"><strong>ID Bill</strong></th>
+                    <th scope="col"><strong>Service Name</strong></th>
+
+                    <th scope="col"><strong>Category Service</strong></th>
+                    <th scope="col"><strong>Quantity Service</strong></th>
+                    <th scope="col"><strong>Registration Date</strong></th>
+                    <th scope="col"><strong>Total</strong></th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (StorageView item in ViewBag.allBill)
+                {
+                    <tr>
+                        <td>@item.IdBill</td>
+                        <td>@item.NameService</td>
+                        @if (item.IdCategory == 1)
+                        {
+                            <td>Service Phone</td>
+                        }
+                        else
+                        {
+                            <td>Service Internet</td>
+                        }
+                        <td>@item.Quantity</td>
+                        <td>@item.RegistrationDate</td>
+                        <td>@item.Total $</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

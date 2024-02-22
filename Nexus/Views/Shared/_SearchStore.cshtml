@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<Nexus.Models.ModelView.SearchStoreView>
+<div class="Search-store">
+    <div class="Search-store__content">
+        <div class="Search-store__result">
+            <h5 class="result-store__title">List of stores <span class="result-name__color"></span></h5>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-facets.css?v=113744239838463669621640687768"
+          rel="stylesheet" type="text/css" media="all">
+    <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/facets.js?v=123462745317715690791640687779"
+            defer="defer"></script>
+
+    <div class="loading-overlay gradient"></div>
+    <ul id="product-grid" data-id="template--15388007760035__product-grid"
+        class="row rless grid product-grid">
+        @for (int i = 0; i < Model.Count; i++)
+        {
+            <li class="grid__item col-6 col-sm-4 col-md-6 col-lg-4 col-xl-4 cless" style="padding-bottom: 20px;">
+                <div class="card-wrapper wbproduct-container card">
+                    <div class="card" style="min-width: 20rem; min-height:10rem">
+                        <div class="card-body">
+                            <h5 class="card-title">@Model[i].Name</h5>
+                            <p class="card-text">@Model[i].Ward, @Model[i].DistrictName</p>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        }
+
+
+    </ul>
+</div>

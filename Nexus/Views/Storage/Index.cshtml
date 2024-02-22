@@ -1,0 +1,676 @@
+﻿@using Nexus.Models.ModelView;
+@using Nexus.Helper;
+@using BCryptNet = BCrypt.Net.BCrypt;
+@model Nexus.Models.ModelView.CustomerView;
+@{
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<style>
+    td, th {
+        text-align: center;
+    }
+
+    table td {
+        vertical-align: middle !important;
+    }
+</style>
+
+<div class="container">
+    <nav class="breadcrumb row" role="navigation" aria-label="breadcrumbs">
+        <div class="col-12">
+            <a href="/" title="Home">Home</a>
+
+            <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+            <span>Your Profile</span>
+
+        </div>
+    </nav>
+</div>
+
+
+
+
+
+
+<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <div id="shopify-section-template--15388007727267__cart-items" class="shopify-section">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-cart.css?v=41613077828374066081640687766"
+              rel="stylesheet" type="text/css" media="all">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-totals.css?v=29443391718443904951640687774"
+              rel="stylesheet" type="text/css" media="all">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-price.css?v=157121878581579519991640687772"
+              rel="stylesheet" type="text/css" media="all">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-discounts.css?v=136734783300090928431640687768"
+              rel="stylesheet" type="text/css" media="all">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-loading-overlay.css?v=110569703901192468011640687769"
+              rel="stylesheet" type="text/css" media="all">
+
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/cart.js?v=10017497365385121541640687764"
+                defer="defer"></script>
+
+        <cart-items class="container">
+            <section class="section">
+                <div class="row mb-4">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-heading p-1 pl-3"><strong>My Profile</strong></h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4 col-12">
+                                        <div class="pl-3">
+                                            <img width="230px" height="auto" src="https://i.pinimg.com/564x/64/f1/8f/64f18f8c11fe15eb5400d45e1de40460.jpg" />
+
+                                        </div>
+                                    </div>
+                                    <div class="col-md-8 col-12">
+                                        <div class="form-group">
+                                            <label for="disabledInput">Name</label>
+                                            <input type="text" class="form-control" id="readonlyInputName" name="name" readonly value="@Model.Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="disabledInput">Email</label>
+                                            <input type="text" class="form-control" id="readonlyInputEmail" name="email" readonly value="@Model.Email">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="disabledInput">Phone</label>
+                                            <input type="text" class="form-control" id="readonlyInputPhone" name="phone" readonly value="@Model.Phone">
+                                        </div>
+                                        <button class="btn icon btn-primary" id="btnChange" onclick="myFunction()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                        </button>
+
+                                        <button class="btn icon btn-primary" id="btnSaveChange" onclick="functionSave()">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                                                <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                                <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                            </svg>
+                                            Save Change
+                                        </button>
+                                        <button class="btn btn-light" id="btnCancelProfile" onclick="functionCancelProfile()">
+                                            Cancel
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card ">
+                            <div class="card-header">
+                                <h4><strong>Change Password</strong></h4>
+                            </div>
+                            <div class="card-body" style="position: relative;">
+                                <div class="form-group">
+                                    <label for="disabledInput">Password</label>
+                                    <input type="password" class="form-control" id="readonlyInputOldPass" name="oldPass" readonly value="">
+                                </div>
+                                <div class="invalid-feedback" id="alertMessPass">
+                                    <i class="bx bx-radio-circle"></i>
+                                    This is invalid state.
+                                </div>
+                                <div class="form-group">
+                                    <label for="disabledInput">New Password</label>
+                                    <input type="password" class="form-control" id="readonlyInputNewPass" name="newPass" readonly value="">
+                                </div>
+                                <div class="form-group">
+                                    <label for="disabledInput">ConfirmPass</label>
+                                    <input type="password" class="form-control" id="readonlyInputConfirmPass" name="confirmPass" readonly value="">
+                                </div>
+                                <div class="invalid-feedback" id="alertMess">
+                                    <i class="bx bx-radio-circle"></i>
+                                    This is invalid state.
+                                </div>
+
+                                <button class="btn icon btn-primary" id="btnChangePass" onclick="myFunctionPass()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                </button>
+
+                                <button class="btn icon btn-primary" id="btnSaveChangePass" onclick="functionSavePass()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
+                                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
+                                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
+                                    </svg>
+                                    Save Change
+                                </button>
+                                <button class="btn btn-light" id="btnCancelPass" onclick="functionCancelPass()">
+                                    Cancel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+        </cart-items>
+        <div class="container">
+            <nav class="breadcrumb row" role="navigation" aria-label="breadcrumbs">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="#" id="btnExpired">Time-expired</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="#" id="btnUsing">Using</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="#" id="btnCancel">Cancelled</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="#" id="btnRequest">Request a product exchange</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+
+                            <a class="navbar-brand" href="#" id="btnAllBill">List of Bill</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </nav>
+        </div>
+
+
+
+
+
+
+
+
+
+
+        <cart-items class="container">
+            <div class="carthead">
+                <a href="/ServicePlan" class="underlined-link">Continue shopping</a>
+            </div>
+            <div id="orderExpiredComponent">
+                @Html.Partial("_OrderExpired")
+            </div>
+            <div id="orderUsingComponent">
+                @Html.Partial("_OrderUsing")
+            </div>
+            <div id="orderCancelComponent">
+                @Html.Partial("_OrderCancelled")
+            </div>
+            <div id="orderRequestComponent">
+                @Html.Partial("_OrderRequest")
+            </div>
+            <div id="allBillComponent">
+                @Html.Partial("_AllBill")
+            </div>
+        </cart-items>
+        @*        <cart-items class="container">
+        <div class="carthead">
+        <h1 class="heading text-center">Profile</h1>
+        <a href="/ServicePlan" class="underlined-link">Continue shopping</a>
+        </div>
+
+
+        <div id="main-cart-items" data-id="template--15388007727267__cart-items">
+        <div class="js-contents">
+        <table class="cart-items table table-hover">
+        <thead>
+        <tr>
+        <th scope="col" style="width:auto"><strong>Name</strong></th>
+        <th scope="col"><strong>Phone</strong></th>
+        <th scope="col"><strong>Address</strong></th>
+        <th scope="col"><strong>Service</strong></th>
+        <th scope="col"><strong>Category Service</strong></th>
+        <th scope="col"><strong>Order Date</strong></th>
+        <th scope="col"><strong>Connection Date</strong></th>
+        <th scope="col"><strong>Expiration Date</strong></th>
+        <th scope="col"><strong>Expiry Date</strong></th>
+        <th scope="col"><strong>Quantity</strong></th>
+        <th scope="col"><strong>The Amount Paid</strong></th>
+        <th scope="col"><strong>Total</strong></th>
+        <th scope="col"><strong>Status Paid</strong></th>
+        <th scope="col"><strong>Status Service</strong></th>
+        <th scope="col"><strong>Status Warranty</strong></th>
+        <th scope="col"><strong>Status giahan</strong></th>
+
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (StorageView item in ViewBag.Storage)
+        {
+        <tr>
+        <td>@item.Name</td>
+        <td>@item.Phone</td>
+        <td>@item.Address</td>
+        <td>@item.NameService</td>
+        @if (item.IdCategory == 1)
+        {
+        <td>Service Phone</td>
+        }
+        else
+        {
+        <td>Service Internet</td>
+        }
+        <td>@item.OrderDate</td>
+        @if (item.ConnectionDate == null && item.ExpirationDate == null)
+        {
+        <td>Waiting </td>
+        <td>Waiting</td>
+        }
+        else
+        {
+        <td>@item.ConnectionDate </td>
+        <td>@item.ExpirationDate</td>
+        }
+
+        <td>@item.ExpiryDate</td>
+        <td>@item.Quantity</td>
+        <td>@item.TheAmountPaid</td>
+        <td>@item.Total</td>
+        @if (@item.StatusPaid == true)
+        {
+        <td>Đã Thanh Toán</td>
+        }
+        @if (@item.StatusService == 0)
+        {
+        <td>
+        <span>Pending</span>
+        </td>
+        }
+        else if (@item.StatusService == 1)
+        {
+        <td>
+        <a class="btn btn-info" href="">Active</a>
+        </td>
+
+        }
+        else if (item.StatusService == 2)
+        {
+        <td>
+        <a class="btn btn-info" href="">Disactive</a>
+
+        </td>
+        }
+        else
+        {
+        <td>
+        <a class="btn btn-info" href="">Disactive</a>
+
+        </td>
+        }
+        @for (int i = 0; i < ViewBag.ProExchange.Count; i++)
+        {
+        @if (item.IdCategory == 2 && item.StatusService == 1 && item.IdBill != ViewBag.ProExchange[i].BillID)
+        {
+        <td>
+        <a href="/Storage/ChangeService?idBill=@item.IdBill" class="btn btn-danger">Change</a>
+        </td>
+        break;
+        }
+        else if (item.IdCategory == 2 && item.StatusService == 1 && item.IdBill == ViewBag.ProExchange[i].BillID && ViewBag.ProExchange[i].Status == false)
+        {
+        <td>Waiting</td>
+        break;
+        }
+        else if (item.IdCategory == 2 && item.IdBill == ViewBag.ProExchange[i].BillID && ViewBag.ProExchange[i].Status == true)
+        {
+        <td>Da doi tra</td>
+        break;
+        }
+        else if (item.IdCategory == 2 && item.StatusService == 2 && item.IdBill != ViewBag.ProExchange[i].BillID)
+        {
+        <td></td>
+        break;
+        }
+        }
+        @if (item.IdCategory == 1 && item.StatusService == 1)
+        {
+        <td>
+        <a href="/Storage/CancelSP?id=@item.OrderID" class="btn btn-danger">Cancel</a>
+        </td>
+        }
+        else if (item.IdCategory == 1 && item.StatusService == 3)
+        {
+        <td>Cancelled</td>
+
+        }
+        else if (item.IdCategory == 1 && item.StatusService == 2)
+        {
+        <td>
+        </td>
+        }
+
+        @if (item.StatusService == 2 || item.StatusService == 3)
+        {
+        <td>
+        <a class="btn btn-danger" href="/CusBuying/Information?ServicePlanID=@item.IdServicePlan">Giahan</a>
+
+        </td>
+        }
+        </tr>
+        }
+        </tbody>
+        </table>
+        </div>
+        </div>
+
+        <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+        <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite"
+        aria-hidden="true" role="status">Loading...</p>
+        </cart-items>*@
+
+        @*        <cart-items class="container mt-5">
+        <div class="carthead">
+        <h1 class="heading text-center">List of Bill</h1>
+        </div>
+
+        <div class="facet-filters sorting caption" style="display: inline-flex; float: right; margin-bottom: 24px">
+        <span class="facet-filters__label d-flex" style="width: 100px; align-items: center">
+        <label class="m-0" for="SortBy">Sort by:</label>
+        </span>
+        <div class="select">
+        <select name="SelectPrice" class="facet-filters__sort select__select caption-large" id="SelectPrice" aria-describedby="a11y-refresh-page-message">
+        <option value="0">All Bills</option>
+        </select>
+        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z">
+        </path>
+        </svg>
+
+        </div>
+        <noscript>
+        <button type="submit" class="facets__button-no-js button">Sort</button>
+        </noscript>
+        </div>
+
+        <div id="main-cart-items" data-id="template--15388007727267__cart-items">
+        <div class="js-contents">
+        <table class="cart-items table table-hover">
+        <thead>
+        <tr>
+        <th scope="col" style="width:auto"><strong>Service Name</strong></th>
+        <th scope="col"><strong>Category Service</strong></th>
+        <th scope="col"><strong>Quantity Service</strong></th>
+        <th scope="col"><strong>Registration Date</strong></th>
+        <th scope="col"><strong>Total</strong></th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (StorageView item in ViewBag.Storage)
+        {
+        <tr>
+        <td>@item.NameService</td>
+        @if (item.IdCategory == 1)
+        {
+        <td>Service Phone</td>
+        }
+        else
+        {
+        <td>Service Internet</td>
+        }
+        <td>@item.Quantity</td>
+        <td>@item.RegistrationDate</td>
+        <td>@item.Total $</td>
+        </tr>
+        }
+        </tbody>
+        </table>
+        </div>
+        </div>
+
+        <p class="visually-hidden" id="cart-live-region-text" aria-live="polite" role="status"></p>
+        <p class="visually-hidden" id="shopping-cart-line-item-status" aria-live="polite"
+        aria-hidden="true" role="status">Loading...</p>
+        </cart-items>*@
+
+
+    </div>
+    <div id="shopify-section-template--15388007727267__cart-footer"
+         class="shopify-section cart__footer-wrapper">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-cart.css?v=41613077828374066081640687766"
+              rel="stylesheet" type="text/css" media="all">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-totals.css?v=29443391718443904951640687774"
+              rel="stylesheet" type="text/css" media="all">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-price.css?v=157121878581579519991640687772"
+              rel="stylesheet" type="text/css" media="all">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-discounts.css?v=136734783300090928431640687768"
+              rel="stylesheet" type="text/css" media="all">
+
+
+    </div>
+</main>
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script>
+    $("#btnSaveChange").hide();
+    $("#btnSaveChangePass").hide();
+    $("#btnCancelProfile").hide();
+    $("#btnCancelPass").hide();
+
+    function myFunction() {
+        document.getElementById("readonlyInputName").readOnly = false;
+        document.getElementById("readonlyInputEmail").readOnly = false;
+        document.getElementById("readonlyInputPhone").readOnly = false;
+
+
+        $("#btnChange").hide();
+        $("#btnSaveChange").show();
+        $("#btnCancelProfile").show();
+    }
+    function functionSave() {
+        $.ajax({
+            type: "Post",
+            url: "/Storage/ChangeProfile?name=" + $("#readonlyInputName").val()
+                + "&&email=" + $("#readonlyInputEmail").val()
+                + "&&phone=" + $("#readonlyInputPhone").val(),  //remember change the controller to your owns.
+            success: function (data) {
+                window.location.reload();
+            },
+            error: function (response) {
+                console.log(response.responseText);
+            }
+        });
+    };
+    $("#alertMessPass").hide();
+    $("#alertMess").hide();
+
+    function myFunctionPass() {
+        document.getElementById("readonlyInputOldPass").readOnly = false;
+        document.getElementById("readonlyInputNewPass").readOnly = false;
+        document.getElementById("readonlyInputConfirmPass").readOnly = false;
+        $("#btnChangePass").hide();
+        $("#btnSaveChangePass").show();
+        $("#btnCancelPass").show();
+    }
+    function functionSavePass() {
+        var a = $("#readonlyInputOldPass").val();
+        var b = $("#readonlyInputNewPass").val();
+        
+        
+            $("#alertMessPass").hide();
+            if ($("#readonlyInputConfirmPass").val() == $("#readonlyInputNewPass").val()) {
+                $.ajax({
+                    url: "/Storage/ChangePass/",
+                    data: {
+                        oldPass: a,
+                        newPass: b
+                    }
+                }).done(function (data) {
+                    //Note Alert Here
+                    alert(data);
+                })
+            }
+            else {
+                $("#alertMess").show();
+            }
+
+        //logout ve login
+        //window.location.href="/Login";
+        
+    };
+    function functionCancelProfile() {
+        $('input[id=readonlyInputName').val('@Model.Name');
+        $('input[id=readonlyInputEmail').val('@Model.Email');
+        $('input[id=readonlyInputPhone').val('@Model.Phone');
+
+        document.getElementById("readonlyInputName").readOnly = true;
+        document.getElementById("readonlyInputEmail").readOnly = true;
+        document.getElementById("readonlyInputPhone").readOnly = true;
+
+
+        $("#btnChange").show();
+        $("#btnSaveChange").hide();
+        $("#btnCancelProfile").hide();
+    }
+    function functionCancelPass() {
+        $('input[id=readonlyInputOldPass').val('');
+        $('input[id=readonlyInputNewPass').val('');
+        $('input[id=readonlyInputConfirmPass').val('');
+
+        document.getElementById("readonlyInputOldPass").readOnly = true;
+        document.getElementById("readonlyInputNewPass").readOnly = true;
+        document.getElementById("readonlyInputConfirmPass").readOnly = true;
+        $("#btnChangePass").show();
+        $("#btnSaveChangePass").hide();
+        $("#btnCancelPass").hide();
+        $("#alertMess").hide();
+        $("#alertMessPass").hide();
+    }
+</script>
+
+<script type="text/javascript">
+    $("#orderExpiredComponent").hide();
+    $("#orderUsingComponent").show();
+    $("#orderCancelComponent").hide();
+    $("#orderRequestComponent").hide();
+    $("#allBillComponent").hide();
+
+    $(function () {
+        $("#btnExpired").click(function () {
+            $("#orderExpiredComponent").show();
+
+            $("#orderUsingComponent").hide();
+
+            $("#orderCancelComponent").hide();
+            $("#orderRequestComponent").hide();
+            $("#allBillComponent").hide();
+
+            $.ajax({
+                type: "Get",
+                url: "/Storage/OrderExpired",  //remember change the controller to your owns.
+                success: function (data) {
+                    $("#orderExpiredComponent").html("");
+                    $("#orderExpiredComponent").html(data);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        });
+    });
+
+    $(function () {
+        $("#btnUsing").click(function () {
+            $("#orderExpiredComponent").hide();
+
+            $("#orderUsingComponent").show();
+            $("#orderCancelComponent").hide();
+            $("#orderRequestComponent").hide();
+            $("#allBillComponent").hide();
+
+            $.ajax({
+                type: "Get",
+                url: "/Storage/OrderUsing",  //remember change the controller to your owns.
+                success: function (data) {
+                    $("#orderUsingComponent").html("");
+                    $("#orderUsingComponent").html(data);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        });
+    });
+
+    $(function () {
+        $("#btnCancel").click(function () {
+            $("#orderExpiredComponent").hide();
+            $("#orderUsingComponent").hide();
+            $("#orderCancelComponent").show();
+            $("#orderRequestComponent").hide();
+            $("#allBillComponent").hide();
+
+            $.ajax({
+                type: "Get",
+                url: "/Storage/OrderCancel",  //remember change the controller to your owns.
+                success: function (data) {
+                    $("#orderCancelComponent").html("");
+                    $("#orderCancelComponent").html(data);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        });
+    });
+
+    $(function () {
+        $("#btnRequest").click(function () {
+            $("#orderExpiredComponent").hide();
+            $("#orderUsingComponent").hide();
+            $("#orderCancelComponent").hide();
+            $("#orderRequestComponent").show();
+            $("#allBillComponent").hide();
+
+            $.ajax({
+                type: "Get",
+                url: "/Storage/OrderRequestExchange",  //remember change the controller to your owns.
+                success: function (data) {
+                    $("#orderRequestComponent").html("");
+                    $("#orderRequestComponent").html(data);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        });
+    });
+
+    $(function () {
+        $("#btnAllBill").click(function () {
+            $("#orderExpiredComponent").hide();
+            $("#orderUsingComponent").hide();
+            $("#orderCancelComponent").hide();
+            $("#orderRequestComponent").hide();
+            $("#allBillComponent").show();
+
+            $.ajax({
+                type: "Get",
+                url: "/Storage/AllBill",  //remember change the controller to your owns.
+                success: function (data) {
+                    $("#allBillComponent").html("");
+                    $("#allBillComponent").html(data);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        });
+    });
+
+
+
+</script>

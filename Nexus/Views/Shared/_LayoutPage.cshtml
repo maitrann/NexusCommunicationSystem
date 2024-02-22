@@ -1,0 +1,1053 @@
+﻿@{
+    string cusCheck = Context.Session.GetString("Customer");
+}
+@*@model List<Nexus.Models.ModelView.ServicePlanView>*@
+<!doctype html>
+<html class="no-js wbboxlt" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color">
+    <link rel="icon" type="image/png"
+          href="//cdn.shopify.com/s/files/1/0508/0409/7187/files/favicon_32x32.png?v=1640691791">
+    <title>
+        Nexus
+    </title>
+    <style data-shopify>
+        :root {
+            --wbbase-font: Work Sans;
+            --font-size-header: 32;
+            --font-size-base: 14;
+            --gradient-base-accent-1: #cfae7a;
+            --color-base-solid-button-labels: #121212;
+            --gradient-base-accent-2: #121212;
+            --color-wb-hovercolor-button-text: #ffffff;
+            --color-wbmaincolors-text: #cfae7a;
+            --color-base-text: #121212;
+            --color-wbbordercolor: #eeeeee;
+            --color-background: #ffffff;
+            --gradient-background: #ffffff;
+            --payment-terms-background-color: #ffffff;
+        }
+
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+
+        svg {
+            width: 14px;
+            height: 14px;
+        }
+    </style>
+
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/bootstrap.min.css?v=66654331482714394831640687762"
+          rel="stylesheet" type="text/css" media="all" />
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/slick.css?v=98340474046176884051640687795"
+          rel="stylesheet" type="text/css" media="all" />
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/slick-theme.css?v=145736353099290770741640687794"
+          rel="stylesheet" type="text/css" media="all" />
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/font-awesome.min.css?v=140533306961432629691640687779"
+          rel="stylesheet" type="text/css" media="all" />
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/base.css?v=160046801318288999001672990485"
+          rel="stylesheet" type="text/css" media="all" />
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/jquery.fancybox.min.css?v=19278034316635137701664540855"
+          rel="stylesheet" type="text/css" media="all" />
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/wbquickview.css?v=63431417088861968411664598271"
+          rel="stylesheet" type="text/css" media="all" />
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-list-menu.css?v=68832584215126737631640687769"
+          rel="stylesheet" type="text/css" media="all" />
+    <link rel="stylesheet"
+          href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-predictive-search.css?v=147809110912277249291640687772"
+          media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,500,600,700" rel="stylesheet">
+
+
+
+</head>
+
+<body class="gradient template-register">
+
+    <svg style="display:none">
+        <symbol viewBox="0 0 512 512" id="arleft">
+            <path d="M501.333,245.333H36.417l141.792-141.792c4.167-4.167,4.167-10.917,0-15.083c-4.167-4.167-10.917-4.167-15.083,0l-160,160
+            c-4.167,4.167-4.167,10.917,0,15.083l160,160c2.083,2.083,4.813,3.125,7.542,3.125c2.729,0,5.458-1.042,7.542-3.125
+            c4.167-4.167,4.167-10.917,0-15.083L36.417,266.667h464.917c5.896,0,10.667-4.771,10.667-10.667S507.229,245.333,501.333,245.333z
+            "></path>
+        </symbol>
+
+        <symbol viewBox="0 0 512 512" id="arright">
+            <g transform="matrix(-1, 1.22465e-16, -1.22465e-16, -1, 512, 512)">
+                <path d="M501.333,245.333H36.417l141.792-141.792c4.167-4.167,4.167-10.917,0-15.083c-4.167-4.167-10.917-4.167-15.083,0l-160,160    c-4.167,4.167-4.167,10.917,0,15.083l160,160c2.083,2.083,4.813,3.125,7.542,3.125c2.729,0,5.458-1.042,7.542-3.125    c4.167-4.167,4.167-10.917,0-15.083L36.417,266.667h464.917c5.896,0,10.667-4.771,10.667-10.667S507.229,245.333,501.333,245.333z">
+                </path>
+            </g>
+        </symbol>
+    </svg>
+
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
+        Skip to content
+    </a>
+
+    <div id="shopify-section-announcement-bar" class="shopify-section">
+    </div>
+    <div id="shopify-section-header" class="shopify-section">
+        <link rel="stylesheet"
+              href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-menu-drawer.css?v=147727021889129653271640687770"
+              media="print" onload="this.media='all'">
+        <link rel="stylesheet"
+              href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-cart-notification.css?v=136972773335152498921640687766"
+              media="print" onload="this.media='all'">
+        <link rel="stylesheet"
+              href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-cart-items.css?v=140584852494689966961640687766"
+              media="print" onload="this.media='all'">
+        <link rel="stylesheet"
+              href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-price.css?v=157121878581579519991640687772"
+              media="print" onload="this.media='all'">
+        <link rel="stylesheet"
+              href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-loading-overlay.css?v=110569703901192468011640687769"
+              media="print" onload="this.media='all'"><noscript>
+            <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-menu-drawer.css?v=147727021889129653271640687770"
+                  rel="stylesheet" type="text/css" media="all" />
+        </noscript>
+        <noscript>
+            <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-cart-notification.css?v=136972773335152498921640687766"
+                  rel="stylesheet" type="text/css" media="all" />
+        </noscript>
+        <noscript>
+            <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-cart-items.css?v=140584852494689966961640687766"
+                  rel="stylesheet" type="text/css" media="all" />
+        </noscript>
+
+        <style>
+            header-drawer {
+                justify-self: start;
+                margin-left: -1.2rem;
+            }
+
+            @@media screen and (min-width: 992px) {
+                header-drawer {
+                    display: none;
+                }
+            }
+        </style>
+
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/details-disclosure.js?v=118626640824924522881640687777"
+                defer="defer"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/details-modal.js?v=4511761896672669691640687778"
+                defer="defer"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/cart-notification.js?v=18770815536247936311640687763"
+                defer="defer"></script>
+
+        <svg xmlns="http://www.w3.org/2000/svg" class="hidden">
+            <symbol id="icon-search" viewBox="0 0 451 451">
+                <path d="M447.05,428l-109.6-109.6c29.4-33.8,47.2-77.9,47.2-126.1C384.65,86.2,298.35,0,192.35,0C86.25,0,0.05,86.3,0.05,192.3 s86.3,192.3,192.3,192.3c48.2,0,92.3-17.8,126.1-47.2L428.05,447c2.6,2.6,6.1,4,9.5,4s6.9-1.3,9.5-4 C452.25,441.8,452.25,433.2,447.05,428z M26.95,192.3c0-91.2,74.2-165.3,165.3-165.3c91.2,0,165.3,74.2,165.3,165.3 s-74.1,165.4-165.3,165.4C101.15,357.7,26.95,283.5,26.95,192.3z">
+                </path>
+            </symbol>
+
+            <symbol id="icon-close" class="icon icon-close" fill="none" viewBox="0 0 18 17">
+                <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                      fill="currentColor" />
+            </symbol>
+        </svg>
+        <sticky-header class="header-wrapper">
+            <header class="header">
+
+                <div class="header-top">
+                    <div class="row htop">
+                        <div class="col-lg-2 col-md-2 col-sm-2 headlogo">
+                            <h1 class="header__heading">
+                                <a href="/"
+                                   class="header__heading-link link link--text focus-inset">
+                                    <img srcset="~/Image/Neuxs.jpg 1x, ~/Image/Neuxs.jpg 2x"
+                                         class="img img-fluid mx-auto"
+                                         src="~/Image/Neuxs.jpg"
+                                         loading="lazy" class="header__heading-logo" width="180" height="38"
+                                         alt="Artista-webibazaar">
+                                </a>
+                            </h1>
+                        </div>
+                        <div class="col-lg-7 col-md-7 middlenav">
+                            <div>
+
+                                <nav id="megamenu" class="megamenu text-center">
+
+                                    <div class="wr-menu" onclick="w3_open()">
+                                        <span>
+                                            <svg class="icon" viewBox="0 0 384 384">
+                                                <rect x="0" y="277.333" width="384" height="42.667"></rect>
+                                                <rect x="0" y="170.667" width="384" height="42.667"></rect>
+                                                <rect x="0" y="64" width="384" height="42.667"></rect>
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <ul id="wbmegalevel-1" class="level_1 menu-vertical">
+                                        <h2 class="wbmenuclose">
+                                            Menu<a class="closebtn float-right"
+                                                   onclick="w3_close()">
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                     aria-hidden="true" focusable="false" role="presentation"
+                                                     class="icon icon-close" fill="none" viewBox="0 0 18 17">
+                                                    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z"
+                                                          fill="currentColor" />
+                                                </svg>
+                                            </a>
+                                        </h2>
+
+                                        <li class="wbmenulink wbmenul_1 ">
+                                            <a class="wbmenul1_link " href="/">
+                                                Home
+                                            </a>
+                                        </li>
+
+                                        <li class="wbmenulink wbmenul_1 wbmegalink-img">
+                                            <a class="wbmenul1_link " href="/ServicePlan">
+                                                Service Plan
+                                                <i class="fa fa-angle-down wbmegamainhd"
+                                                   data-submenu="menu_47168730-d27c-4e7d-9244-19f130e2af57"></i>
+                                                <span class="menu_badge" style="background-color: #ff0000">Hot</span>
+                                            </a>
+                                            <ul class="level_2 wbmenudropdown"
+                                                id="menu_47168730-d27c-4e7d-9244-19f130e2af57">
+                                                @for (int i = 0; i < ViewBag.lsCategory.Count; i++)
+                                                {
+                                                    <li class="level_3__item">
+                                                        <a href="/ServicePlan/ServicePlanWithCategory/@ViewBag.lsCategory[i].CategoryID">@ViewBag.lsCategory[i].CategoryName</a>
+                                                    </li>
+                                                }
+                                            </ul>
+                                        </li>
+
+                                        <li class="wbmenulink wbmenul_1 wbmegaproduct">
+                                            <a class="wbmenul1_link " href="/Information">
+                                                Information
+                                            </a>
+                                        </li>
+
+                                        <li class="wbmenulink wbmenul_1 wbmegalink-img">
+                                            <a class="wbmenul1_link " href="">
+                                                Account
+                                                <i class="fa fa-angle-down wbmegamainhd"
+                                                   data-submenu="menu_47168730-d27c-4e7d-9244-19f130e2af57"></i>
+                                            </a>
+
+                                            @if (cusCheck == null)
+                                            {
+                                                <ul class="level_2 wbmenudropdown" style="width: 200px;margin-left:484px !important "
+                                                    id="menu_47168730-d27c-4e7d-9244-19f130e2af57">
+                                                    <li class="level_3__item">
+                                                        <a class="level_2__link" href="/Register">Register</a>
+                                                    </li>
+
+                                                    <li class="level_3__item">
+                                                        <a class="level_2__link" href="/Login">Login</a>
+                                                    </li>
+                                                </ul>
+                                            }
+                                            else
+                                            {
+                                                <ul class="level_2 wbmenudropdown" style="width: 200px;margin-left:484px !important "
+                                                    id="menu_47168730-d27c-4e7d-9244-19f130e2af57">
+
+                                                    <li class="level_3__item">
+                                                        <a class="level_2__link" href="/Logout">Logout</a>
+                                                    </li>
+                                                </ul>
+                                            }
+
+                                        </li>
+
+
+                                        <li class="wbmenulink wbmenul_1 wbmegablog">
+                                            <a class="wbmenul1_link " href="/Blog">
+                                                Blog
+                                                
+                                            </a>
+                                            <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-slider.css?v=62267364994741792611665038565"
+                                                  rel="stylesheet" type="text/css" media="all" />
+                                            
+
+                                        </li>
+                                        <li class="wbmenulink wbmenul_1 wbmegaproduct">
+                                            <a class="wbmenul1_link " href="/Storage">
+                                                Profile
+                                            </a>
+                                        </li>
+                                        <li class="wbmenulink wbmenul_1 wbmegaproduct">
+                                            <a class="wbmenul1_link " href="/SearchStore">
+                                                Search Store
+                                                <span class="menu_badge" style="background-color: #00a900">New</span>
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                    <div class="w3-overlay w3-animate-opacity" oncslick="w3_close()"
+                                         style="cursor: pointer;" id="myOverlay"></div>
+                                </nav>
+
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-8 text-right tright">
+                            <div class="header__icons">
+                                <!--Old Search Hello-->
+                                <!-- <div class="slidedown_section dropdown">
+                                                        <div class="hmuser" data-toggle="dropdown">
+                                                            <div class="userdrop">
+                                                                <span class="svgbg"><svg viewBox="0 0 512 512">
+                                                                        <path d="M256,288.389c-153.837,0-238.56,72.776-238.56,204.925c0,10.321,8.365,18.686,18.686,18.686h439.747
+                                c10.321,0,18.686-8.365,18.686-18.686C494.56,361.172,409.837,288.389,256,288.389z M55.492,474.628
+                                c7.35-98.806,74.713-148.866,200.508-148.866s193.159,50.06,200.515,148.866H55.492z"></path>
+                                                                        <path d="M256,0c-70.665,0-123.951,54.358-123.951,126.437c0,74.19,55.604,134.54,123.951,134.54s123.951-60.35,123.951-134.534
+                                C379.951,54.358,326.665,0,256,0z M256,223.611c-47.743,0-86.579-43.589-86.579-97.168c0-51.611,36.413-89.071,86.579-89.071
+                                c49.363,0,86.579,38.288,86.579,89.071C342.579,180.022,303.743,223.611,256,223.611z"></path>
+                                                                    </svg></span>
+                                                                <span class="medium-hide small-hide custext">
+
+                                                                    Register
+
+                                                                </span>
+                                                            </div>
+                                                        </div>
+                                                        <div class="dropdown-menu dropdown-menu-right">
+                                                            <div class="header-panel-top">
+                                                                <div class="customer_account text-left">
+                                                                    <ul class="list-unstyled">
+
+                                                                        <li>
+                                                                            <a href="/account/login">
+                                                                                <i class="fa fa-lock"></i>
+                                                                                Log in
+                                                                            </a>
+                                                                        </li>
+                                                                        <li>
+                                                                            <a href="/account/register" title="Create account">
+                                                                                <i class="fa fa-user"></i>
+                                                                                Create account
+                                                                            </a>
+                                                                        </li>
+
+                                                                        <noscript>
+                                                                            <form method="post" action="/localization"
+                                                                                id="FooterCountryFormNoScript" accept-charset="UTF-8"
+                                                                                class="localization-form" enctype="multipart/form-data">
+                                                                                <input type="hidden" name="form_type"
+                                                                                    value="localization" /><input type="hidden" name="utf8"
+                                                                                    value="✓" /><input type="hidden" name="_method"
+                                                                                    value="put" /><input type="hidden" name="return_to"
+                                                                                    value="/" />
+                                                                                <div class="localization-form__select">
+                                                                                    <h2 class="visually-hidden"
+                                                                                        id="FooterCountryLabelNoScript">Country/region</h2>
+                                                                                    <select class="localization-selector link"
+                                                                                        name="country_code"
+                                                                                        aria-labelledby="FooterCountryLabelNoScript">
+                                                                                       
+                                                                                    </select>
+                                                                                    <svg aria-hidden="true" focusable="false"
+                                                                                        role="presentation" class="icon icon-caret"
+                                                                                        viewBox="0 0 10 6">
+                                                                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                                                                            d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z">
+                                                                                    </svg>
+
+                                                                                </div>
+                                                                                <button class="button button--tertiary">Update
+                                                                                    country/region</button>
+                                                                            </form>
+                                                                        </noscript>
+                                                                        <localization-form>
+                                                                            <form method="post" action="/localization"
+                                                                                id="FooterCountryForm" accept-charset="UTF-8"
+                                                                                class="localization-form" enctype="multipart/form-data">
+                                                                                <input type="hidden" name="form_type"
+                                                                                    value="localization" /><input type="hidden" name="utf8"
+                                                                                    value="✓" /><input type="hidden" name="_method"
+                                                                                    value="put" /><input type="hidden" name="return_to"
+                                                                                    value="/" />
+                                                                                <div class="no-js-hidden">
+                                                                                    <div class="disclosure">
+                                                                                        <button type="button"
+                                                                                            class="disclosure__button localization-form__select localization-selector link link--text caption-large"
+                                                                                            aria-expanded="false"
+                                                                                            aria-controls="FooterCountryList"
+                                                                                            aria-describedby="FooterCountryLabel">
+                                                                                            Vietnam (INR ₹)
+                                                                                            <svg aria-hidden="true" focusable="false"
+                                                                                                role="presentation" class="icon icon-caret"
+                                                                                                viewBox="0 0 10 6">
+                                                                                                <path fill-rule="evenodd"
+                                                                                                    clip-rule="evenodd"
+                                                                                                    d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z">
+                                                                                            </svg>
+
+                                                                                        </button>
+                                                                                        <ul id="FooterCountryList" role="list"
+                                                                                            class="disclosure__list list-unstyled" hidden>
+                                                                                            
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <input type="hidden" name="country_code" value="VN">
+                                                                                </div>
+                                                                            </form>
+                                                                        </localization-form><localization-form>
+                                                                            <form method="post" action="/localization"
+                                                                                id="FooterLanguageForm" accept-charset="UTF-8"
+                                                                                class="localization-form" enctype="multipart/form-data">
+                                                                                <input type="hidden" name="form_type"
+                                                                                    value="localization" /><input type="hidden" name="utf8"
+                                                                                    value="✓" /><input type="hidden" name="_method"
+                                                                                    value="put" /><input type="hidden" name="return_to"
+                                                                                    value="/" />
+                                                                                <div class="no-js-hidden">
+                                                                                    <div class="disclosure">
+                                                                                        <button type="button"
+                                                                                            class="disclosure__button localization-form__select localization-selector link link--text caption-large"
+                                                                                            aria-expanded="false"
+                                                                                            aria-controls="FooterLanguageList"
+                                                                                            aria-describedby="FooterLanguageLabel">
+                                                                                            English
+                                                                                            <svg aria-hidden="true" focusable="false"
+                                                                                                role="presentation" class="icon icon-caret"
+                                                                                                viewBox="0 0 10 6">
+                                                                                                <path fill-rule="evenodd"
+                                                                                                    clip-rule="evenodd"
+                                                                                                    d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z">
+                                                                                            </svg>
+
+                                                                                        </button>
+                                                                                        <ul id="FooterLanguageList" role="list"
+                                                                                            class="disclosure__list list-unstyled" hidden>
+                                                                                            <li class="disclosure__item" tabindex="-1">
+                                                                                                <a class="link link--text disclosure__link caption-large disclosure__link--active focus-inset"
+                                                                                                    href="#" hreflang="en" lang="en"
+                                                                                                    aria-current="true" data-value="en">
+                                                                                                    English
+                                                                                                </a>
+                                                                                            </li>
+                                                                                            <li class="disclosure__item" tabindex="-1">
+                                                                                                <a class="link link--text disclosure__link caption-large focus-inset"
+                                                                                                    href="#" hreflang="ar" lang="ar"
+                                                                                                    data-value="ar">
+                                                                                                    العربية
+                                                                                                </a>
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </div>
+                                                                                    <input type="hidden" name="locale_code" value="en">
+                                                                                </div>
+                                                                            </form>
+                                                                        </localization-form>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+            </header>
+        </sticky-header>
+
+        @RenderBody()
+        <div id="shopify-section-popup-products" class="shopify-section index-section">
+            <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-card.css?v=89485629491935090781664598352"
+                  rel="stylesheet" type="text/css" media="all" />
+            <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-price.css?v=157121878581579519991640687772"
+                  rel="stylesheet" type="text/css" media="all" />
+            <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-rating.css?v=43346175014764664351640687773"
+                  rel="stylesheet" type="text/css" media="all" />
+
+
+
+        </div>
+        <div id="shopify-section-footer" class="shopify-section">
+            <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/section-footer.css?v=64657304613833455551640687791"
+                  rel="stylesheet" type="text/css" media="all" />
+            <link rel="stylesheet"
+                  href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-newsletter.css?v=11382818362896181181640687770"
+                  media="print" onload="this.media='all'">
+            <link rel="stylesheet"
+                  href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-list-menu.css?v=68832584215126737631640687769"
+                  media="print" onload="this.media='all'">
+            <link rel="stylesheet"
+                  href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-rte.css?v=130037445723382612091640687773"
+                  media="print" onload="this.media='all'">
+            <link rel="stylesheet"
+                  href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/disclosure.css?v=53687825654556906991640687778"
+                  media="print" onload="this.media='all'">
+
+            <noscript>
+                <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-newsletter.css?v=11382818362896181181640687770"
+                      rel="stylesheet" type="text/css" media="all" />
+            </noscript>
+            <noscript>
+                <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-list-menu.css?v=68832584215126737631640687769"
+                      rel="stylesheet" type="text/css" media="all" />
+            </noscript>
+            <noscript>
+                <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-rte.css?v=130037445723382612091640687773"
+                      rel="stylesheet" type="text/css" media="all" />
+            </noscript>
+            <noscript>
+                <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/disclosure.css?v=53687825654556906991640687778"
+                      rel="stylesheet" type="text/css" media="all" />
+            </noscript>
+            <style>
+                .footer {
+                    color: #9e9e9e;
+                    background-color: #121212;
+                }
+
+                .footer__blocks-wrapper h5,
+                .footer-block--newsletter h2 {
+                    color: #ffffff;
+                }
+
+                .footer .footer-collapse li a,
+                .footblink p a,
+                .footblink p a::after,
+                .copyright__content a,
+                .footer__list-social li a {
+                    color: #9e9e9e;
+                }
+            </style>
+            <footer class="footer">
+
+
+
+                <div class="footmiddle">
+                    <div class="container">
+                        <div class="footer__blocks-wrapper row">
+                            <div class="footer-block col-md-3 col-sm-12 col-12">
+                                <h5 data-toggle="collapse" data-target="#wb-AboutUs" class="toggle collapsed">
+                                    ABOUT US
+                                </h5>
+                                <div class="wbfootcont collapse footer-collapse" id="wb-AboutUs">
+                                    <p>
+                                        Nexus Communication System is an Organization system that provides two services like the tele-communications and Internet Services. It is one of the major vendors at the local place. It has now extended its service all over the territory due to the increase in demand for the internet service.
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="footer-block col-md-3 col-sm-12 col-12">
+                                <h5 data-toggle="collapse" data-target="#wb-Products" class="toggle collapsed">
+                                    Products
+                                </h5>
+                                <ul class="wbfootcont collapse footer-collapse list-unstyled" id="wb-Products">
+                                    <li>
+                                        <a href="/collections/abstract-painting" class="">Abstract Painting</a>
+                                    </li>
+                                    <li>
+                                        <a href="/collections/bestseller" class="">bestseller</a>
+                                    </li>
+                                    <li>
+                                        <a href="/collections/featured" class="">featured</a>
+                                    </li>
+                                    <li>
+                                        <a href="/collections/historical-painting" class="">Historical Painting</a>
+                                    </li>
+                                    <li>
+                                        <a href="/collections/latest" class="">latest</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-block col-md-3 col-sm-12 col-12">
+                                <h5 data-toggle="collapse" data-target="#wb-Service" class="toggle collapsed">
+                                    Service
+                                </h5>
+                                <ul class="wbfootcont collapse footer-collapse list-unstyled" id="wb-Service">
+                                    <li>
+                                        <a href="/pages/about-us" class="">about us</a>
+                                    </li>
+                                    <li>
+                                        <a href="/pages/contact-us" class="">contact us</a>
+                                    </li>
+                                    <li>
+                                        <a href="/pages/information" class="">information</a>
+                                    </li>
+                                    <li>
+                                        <a href="/pages/privacy-policy" class="">privacy policy</a>
+                                    </li>
+                                    <li>
+                                        <a href="/pages/terms-condition" class="">terms & condition</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer-block col-md-3 col-sm-12 col-12">
+                                <h5 data-toggle="collapse" data-target="#wb-ContactUs" class="toggle collapsed">
+                                    Contact
+                                    us
+                                </h5>
+                                <div class="wbfootcont collapse footer-collapse" id="wb-ContactUs">
+                                    <ul>
+                                        <li>
+                                            <svg viewBox="0 0 410.344 410.344">
+                                                <path d="M205.212,0C119.37,0.088,49.816,69.678,49.772,155.52c0,83.52,143.36,245.36,149.44,252.16
+      c2.947,3.292,8.005,3.571,11.297,0.624c0.219-0.196,0.427-0.404,0.624-0.624c6.08-6.88,149.44-168.64,149.44-252.16
+      C360.528,69.709,291.022,0.132,205.212,0z M205.212,390.16c-27.36-32-139.44-166.32-139.44-234.72
+      C65.772,78.429,128.201,16,205.212,16s139.44,62.429,139.44,139.44C344.652,223.84,232.572,358.32,205.212,390.16z">
+                                                </path>
+                                                <path d="M208.012,78c-46.524,0.044-84.204,37.796-84.16,84.32c0.044,46.524,37.796,84.204,84.32,84.16
+      c46.493-0.044,84.16-37.747,84.16-84.24C292.244,115.721,254.531,78.044,208.012,78z M208.012,230.56
+      c-37.688,0-68.24-30.552-68.24-68.24s30.552-68.24,68.24-68.24s68.24,30.552,68.24,68.24
+      C276.208,199.99,245.681,230.516,208.012,230.56z"></path>
+                                            </svg> <span>demo store United States.</span>
+                                        </li>
+                                        <li>
+                                            <svg viewBox="0 0 473.806 473.806">
+                                                <path d="M374.456,293.506c-9.7-10.1-21.4-15.5-33.8-15.5c-12.3,0-24.1,5.3-34.2,15.4l-31.6,31.5c-2.6-1.4-5.2-2.7-7.7-4
+      c-3.6-1.8-7-3.5-9.9-5.3c-29.6-18.8-56.5-43.3-82.3-75c-12.5-15.8-20.9-29.1-27-42.6c8.2-7.5,15.8-15.3,23.2-22.8
+      c2.8-2.8,5.6-5.7,8.4-8.5c21-21,21-48.2,0-69.2l-27.3-27.3c-3.1-3.1-6.3-6.3-9.3-9.5c-6-6.2-12.3-12.6-18.8-18.6
+      c-9.7-9.6-21.3-14.7-33.5-14.7s-24,5.1-34,14.7c-0.1,0.1-0.1,0.1-0.2,0.2l-34,34.3c-12.8,12.8-20.1,28.4-21.7,46.5
+      c-2.4,29.2,6.2,56.4,12.8,74.2c16.2,43.7,40.4,84.2,76.5,127.6c43.8,52.3,96.5,93.6,156.7,122.7c23,10.9,53.7,23.8,88,26
+      c2.1,0.1,4.3,0.2,6.3,0.2c23.1,0,42.5-8.3,57.7-24.8c0.1-0.2,0.3-0.3,0.4-0.5c5.2-6.3,11.2-12,17.5-18.1c4.3-4.1,8.7-8.4,13-12.9
+      c9.9-10.3,15.1-22.3,15.1-34.6c0-12.4-5.3-24.3-15.4-34.3L374.456,293.506z M410.256,398.806
+      C410.156,398.806,410.156,398.906,410.256,398.806c-3.9,4.2-7.9,8-12.2,12.2c-6.5,6.2-13.1,12.7-19.3,20
+      c-10.1,10.8-22,15.9-37.6,15.9c-1.5,0-3.1,0-4.6-0.1c-29.7-1.9-57.3-13.5-78-23.4c-56.6-27.4-106.3-66.3-147.6-115.6
+      c-34.1-41.1-56.9-79.1-72-119.9c-9.3-24.9-12.7-44.3-11.2-62.6c1-11.7,5.5-21.4,13.8-29.7l34.1-34.1c4.9-4.6,10.1-7.1,15.2-7.1
+      c6.3,0,11.4,3.8,14.6,7c0.1,0.1,0.2,0.2,0.3,0.3c6.1,5.7,11.9,11.6,18,17.9c3.1,3.2,6.3,6.4,9.5,9.7l27.3,27.3
+      c10.6,10.6,10.6,20.4,0,31c-2.9,2.9-5.7,5.8-8.6,8.6c-8.4,8.6-16.4,16.6-25.1,24.4c-0.2,0.2-0.4,0.3-0.5,0.5
+      c-8.6,8.6-7,17-5.2,22.7c0.1,0.3,0.2,0.6,0.3,0.9c7.1,17.2,17.1,33.4,32.3,52.7l0.1,0.1c27.6,34,56.7,60.5,88.8,80.8
+      c4.1,2.6,8.3,4.7,12.3,6.7c3.6,1.8,7,3.5,9.9,5.3c0.4,0.2,0.8,0.5,1.2,0.7c3.4,1.7,6.6,2.5,9.9,2.5c8.3,0,13.5-5.2,15.2-6.9
+      l34.2-34.2c3.4-3.4,8.8-7.5,15.1-7.5c6.2,0,11.3,3.9,14.4,7.3c0.1,0.1,0.1,0.1,0.2,0.2l55.1,55.1
+      C420.456,377.706,420.456,388.206,410.256,398.806z"></path>
+                                                <path d="M256.056,112.706c26.2,4.4,50,16.8,69,35.8s31.3,42.8,35.8,69c1.1,6.6,6.8,11.2,13.3,11.2c0.8,0,1.5-0.1,2.3-0.2
+      c7.4-1.2,12.3-8.2,11.1-15.6c-5.4-31.7-20.4-60.6-43.3-83.5s-51.8-37.9-83.5-43.3c-7.4-1.2-14.3,3.7-15.6,11
+      S248.656,111.506,256.056,112.706z"></path>
+                                                <path d="M473.256,209.006c-8.9-52.2-33.5-99.7-71.3-137.5s-85.3-62.4-137.5-71.3c-7.3-1.3-14.2,3.7-15.5,11
+      c-1.2,7.4,3.7,14.3,11.1,15.6c46.6,7.9,89.1,30,122.9,63.7c33.8,33.8,55.8,76.3,63.7,122.9c1.1,6.6,6.8,11.2,13.3,11.2
+      c0.8,0,1.5-0.1,2.3-0.2C469.556,223.306,474.556,216.306,473.256,209.006z"></path>
+                                            </svg> <span>0123-456-789</span>
+                                        </li>
+                                        <li>
+                                            <svg viewBox="0 0 512 512">
+                                                <path d="m494.2,488c0,0 0-225.8 0-301 0-3.1-3.9-7-7.7-9.9l-78.7-57.1v-63.1c0-6.2-5.2-10.4-10.4-10.4h-89.7l-45.7-33.3c-3.1-2.1-8.3-2.1-11.5,0l-45.7,33.3h-89.7c-6.2,0-10.4,5.2-10.4,10.4v62.4l-79.7,57.9c-4.7,2.9-7.7,6.7-7.7,9.9 0,75.7 0,303 0,303 0,5.9 4.7,10 9.6,10.4 0.3,0 0.5,0 0.8,0h456c6.7-0.1 10.5-5.3 10.5-12.5zm-19.8-282.3v263.6l-172.1-137.8 172.1-125.8zm-7.7-18.3l-58.9,42.9v-86.2l58.9,43.3zm-210.9-154.5l18.3,13.5h-36.7l18.4-13.5zm131.2,34.4v178.2l-131.2,95.6-131.2-95.6v-178.2h262.4zm-349.8,138.4l172.1,125.8-172.1,138.6v-264.4zm67.6,25.4l-60.4-44 60.4-43.9v87.9zm-48.9,249.5l170.1-136.9 23.5,17.2c4.5,3.4 7.9,3.4 12.5,0l23.5-17.2 171.1,136.9h-400.7z">
+                                                </path>
+                                                <rect width="140.5" x="186.1" y="118.3" height="19.8"></rect>
+                                                <rect width="140.5" x="186.1" y="181.8" height="19.8"></rect>
+                                                <rect width="140.5" x="186.1" y="245.3" height="19.8"></rect>
+                                            </svg> <span>demo@demo.com</span>
+                                        </li>
+                                    </ul>
+                                    <div class="footer__payment">
+                                        <span class="visually-hidden">Payment methods</span>
+                                        <ul class="list list-payment" role="list">
+
+                                            <li class="list-payment__item">
+                                                <svg class="icon icon--full-color"
+                                                     viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img"
+                                                     width="38" height="24" aria-labelledby="pi-visa">
+                                                    <title id="pi-visa">Visa</title>
+                                                    <path opacity=".07"
+                                                          d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" />
+                                                    <path fill="#fff"
+                                                          d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" />
+                                                    <path d="M28.3 10.1H28c-.4 1-.7 1.5-1 3h1.9c-.3-1.5-.3-2.2-.6-3zm2.9 5.9h-1.7c-.1 0-.1 0-.2-.1l-.2-.9-.1-.2h-2.4c-.1 0-.2 0-.2.2l-.3.9c0 .1-.1.1-.1.1h-2.1l.2-.5L27 8.7c0-.5.3-.7.8-.7h1.5c.1 0 .2 0 .2.2l1.4 6.5c.1.4.2.7.2 1.1.1.1.1.1.1.2zm-13.4-.3l.4-1.8c.1 0 .2.1.2.1.7.3 1.4.5 2.1.4.2 0 .5-.1.7-.2.5-.2.5-.7.1-1.1-.2-.2-.5-.3-.8-.5-.4-.2-.8-.4-1.1-.7-1.2-1-.8-2.4-.1-3.1.6-.4.9-.8 1.7-.8 1.2 0 2.5 0 3.1.2h.1c-.1.6-.2 1.1-.4 1.7-.5-.2-1-.4-1.5-.4-.3 0-.6 0-.9.1-.2 0-.3.1-.4.2-.2.2-.2.5 0 .7l.5.4c.4.2.8.4 1.1.6.5.3 1 .8 1.1 1.4.2.9-.1 1.7-.9 2.3-.5.4-.7.6-1.4.6-1.4 0-2.5.1-3.4-.2-.1.2-.1.2-.2.1zm-3.5.3c.1-.7.1-.7.2-1 .5-2.2 1-4.5 1.4-6.7.1-.2.1-.3.3-.3H18c-.2 1.2-.4 2.1-.7 3.2-.3 1.5-.6 3-1 4.5 0 .2-.1.2-.3.2M5 8.2c0-.1.2-.2.3-.2h3.4c.5 0 .9.3 1 .8l.9 4.4c0 .1 0 .1.1.2 0-.1.1-.1.1-.1l2.1-5.1c-.1-.1 0-.2.1-.2h2.1c0 .1 0 .1-.1.2l-3.1 7.3c-.1.2-.1.3-.2.4-.1.1-.3 0-.5 0H9.7c-.1 0-.2 0-.2-.2L7.9 9.5c-.2-.2-.5-.5-.9-.6-.6-.3-1.7-.5-1.9-.5L5 8.2z"
+                                                          fill="#142688" />
+                                                </svg>
+                                            </li>
+                                            <li class="list-payment__item">
+                                                <svg class="icon icon--full-color"
+                                                     viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" role="img"
+                                                     width="38" height="24" aria-labelledby="pi-master">
+                                                    <title id="pi-master">Mastercard</title>
+                                                    <path opacity=".07"
+                                                          d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" />
+                                                    <path fill="#fff"
+                                                          d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" />
+                                                    <circle fill="#EB001B" cx="15" cy="12" r="7" />
+                                                    <circle fill="#F79E1B" cx="23" cy="12" r="7" />
+                                                    <path fill="#FF5F00"
+                                                          d="M22 12c0-2.4-1.2-4.5-3-5.7-1.8 1.3-3 3.4-3 5.7s1.2 4.5 3 5.7c1.8-1.2 3-3.3 3-5.7z" />
+                                                </svg>
+                                            </li>
+                                            <li class="list-payment__item">
+                                                <svg class="icon icon--full-color"
+                                                     xmlns="http://www.w3.org/2000/svg" role="img" viewBox="0 0 38 24"
+                                                     width="38" height="24" aria-labelledby="pi-american_express">
+                                                    <title id="pi-american_express">American Express</title>
+                                                    <g fill="none">
+                                                        <path fill="#000"
+                                                              d="M35,0 L3,0 C1.3,0 0,1.3 0,3 L0,21 C0,22.7 1.4,24 3,24 L35,24 C36.7,24 38,22.7 38,21 L38,3 C38,1.3 36.6,0 35,0 Z"
+                                                              opacity=".07" />
+                                                        <path fill="#006FCF"
+                                                              d="M35,1 C36.1,1 37,1.9 37,3 L37,21 C37,22.1 36.1,23 35,23 L3,23 C1.9,23 1,22.1 1,21 L1,3 C1,1.9 1.9,1 3,1 L35,1" />
+                                                        <path fill="#FFF"
+                                                              d="M8.971,10.268 L9.745,12.144 L8.203,12.144 L8.971,10.268 Z M25.046,10.346 L22.069,10.346 L22.069,11.173 L24.998,11.173 L24.998,12.412 L22.075,12.412 L22.075,13.334 L25.052,13.334 L25.052,14.073 L27.129,11.828 L25.052,9.488 L25.046,10.346 L25.046,10.346 Z M10.983,8.006 L14.978,8.006 L15.865,9.941 L16.687,8 L27.057,8 L28.135,9.19 L29.25,8 L34.013,8 L30.494,11.852 L33.977,15.68 L29.143,15.68 L28.065,14.49 L26.94,15.68 L10.03,15.68 L9.536,14.49 L8.406,14.49 L7.911,15.68 L4,15.68 L7.286,8 L10.716,8 L10.983,8.006 Z M19.646,9.084 L17.407,9.084 L15.907,12.62 L14.282,9.084 L12.06,9.084 L12.06,13.894 L10,9.084 L8.007,9.084 L5.625,14.596 L7.18,14.596 L7.674,13.406 L10.27,13.406 L10.764,14.596 L13.484,14.596 L13.484,10.661 L15.235,14.602 L16.425,14.602 L18.165,10.673 L18.165,14.603 L19.623,14.603 L19.647,9.083 L19.646,9.084 Z M28.986,11.852 L31.517,9.084 L29.695,9.084 L28.094,10.81 L26.546,9.084 L20.652,9.084 L20.652,14.602 L26.462,14.602 L28.076,12.864 L29.624,14.602 L31.499,14.602 L28.987,11.852 L28.986,11.852 Z" />
+                                                    </g>
+                                                </svg>
+                                            </li>
+                                            <li class="list-payment__item">
+                                                <svg class="icon icon--full-color"
+                                                     viewBox="0 0 38 24" xmlns="http://www.w3.org/2000/svg" width="38"
+                                                     height="24" role="img" aria-labelledby="pi-paypal">
+                                                    <title id="pi-paypal">PayPal</title>
+                                                    <path opacity=".07"
+                                                          d="M35 0H3C1.3 0 0 1.3 0 3v18c0 1.7 1.4 3 3 3h32c1.7 0 3-1.3 3-3V3c0-1.7-1.4-3-3-3z" />
+                                                    <path fill="#fff"
+                                                          d="M35 1c1.1 0 2 .9 2 2v18c0 1.1-.9 2-2 2H3c-1.1 0-2-.9-2-2V3c0-1.1.9-2 2-2h32" />
+                                                    <path fill="#003087"
+                                                          d="M23.9 8.3c.2-1 0-1.7-.6-2.3-.6-.7-1.7-1-3.1-1h-4.1c-.3 0-.5.2-.6.5L14 15.6c0 .2.1.4.3.4H17l.4-3.4 1.8-2.2 4.7-2.1z" />
+                                                    <path fill="#3086C8"
+                                                          d="M23.9 8.3l-.2.2c-.5 2.8-2.2 3.8-4.6 3.8H18c-.3 0-.5.2-.6.5l-.6 3.9-.2 1c0 .2.1.4.3.4H19c.3 0 .5-.2.5-.4v-.1l.4-2.4v-.1c0-.2.3-.4.5-.4h.3c2.1 0 3.7-.8 4.1-3.2.2-1 .1-1.8-.4-2.4-.1-.5-.3-.7-.5-.8z" />
+                                                    <path fill="#012169"
+                                                          d="M23.3 8.1c-.1-.1-.2-.1-.3-.1-.1 0-.2 0-.3-.1-.3-.1-.7-.1-1.1-.1h-3c-.1 0-.2 0-.2.1-.2.1-.3.2-.3.4l-.7 4.4v.1c0-.3.3-.5.6-.5h1.3c2.5 0 4.1-1 4.6-3.8v-.2c-.1-.1-.3-.2-.5-.2h-.1z" />
+                                                </svg>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="container">
+                    <div class="row footer-block--newsletter text-center">
+                        <div class="col-12">
+                            <h2>NEWSLETTER SIGN UP</h2>
+                            <p>Subscribe for latest stories and promotions</p>
+                            <form method="post" action="/contact#ContactFooter" id="ContactFooter"
+                                  accept-charset="UTF-8" class="footer__newsletter newsletter-form">
+                                <input type="hidden"
+                                       name="form_type" value="customer" /><input type="hidden" name="utf8"
+                                                                                  value="✓" /><input type="hidden" name="contact[tags]" value="newsletter">
+                                <div class="newsletter-form__field-wrapper">
+                                    <div class="field">
+                                        <input id="NewsletterForm--footer" type="email" name="contact[email]"
+                                               class="field__input" value="" aria-required="true" autocorrect="off"
+                                               autocapitalize="off" autocomplete="email" placeholder="Email" required>
+                                        <label class="field__label" for="NewsletterForm--footer">
+                                            Email
+                                        </label>
+                                        <div class="input-group-btn">
+                                            <button type="submit" class="newsletter-form__button btn-primary btn"
+                                                    name="commit" id="Subscribe" aria-label="Subscribe">
+                                                <svg viewBox="0 0 493.356 493.356">
+                                                    <path d="M490.498,239.278l-109.632-99.929c-3.046-2.474-6.376-2.95-9.993-1.427c-3.613,1.525-5.427,4.283-5.427,8.282v63.954H9.136
+		c-2.666,0-4.856,0.855-6.567,2.568C0.859,214.438,0,216.628,0,219.292v54.816c0,2.663,0.855,4.853,2.568,6.563
+		c1.715,1.712,3.905,2.567,6.567,2.567h356.313v63.953c0,3.812,1.817,6.57,5.428,8.278c3.62,1.529,6.95,0.951,9.996-1.708
+		l109.632-101.077c1.903-1.902,2.852-4.182,2.852-6.849C493.356,243.367,492.401,241.181,490.498,239.278z"></path>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <ul class="footer__list-social col-12" role="list">
+                                    <li>
+                                        <a href="#" class="icon-t">
+                                            <svg aria-hidden="true" focusable="false"
+                                                 role="presentation" class="icon icon-twitter" viewBox="0 0 18 15">
+                                                <path fill="currentColor"
+                                                      d="M17.64 2.6a7.33 7.33 0 01-1.75 1.82c0 .05 0 .13.02.23l.02.23a9.97 9.97 0 01-1.69 5.54c-.57.85-1.24 1.62-2.02 2.28a9.09 9.09 0 01-2.82 1.6 10.23 10.23 0 01-8.9-.98c.34.02.61.04.83.04 1.64 0 3.1-.5 4.38-1.5a3.6 3.6 0 01-3.3-2.45A2.91 2.91 0 004 9.35a3.47 3.47 0 01-2.02-1.21 3.37 3.37 0 01-.8-2.22v-.03c.46.24.98.37 1.58.4a3.45 3.45 0 01-1.54-2.9c0-.61.14-1.2.45-1.79a9.68 9.68 0 003.2 2.6 10 10 0 004.08 1.07 3 3 0 01-.13-.8c0-.97.34-1.8 1.03-2.48A3.45 3.45 0 0112.4.96a3.49 3.49 0 012.54 1.1c.8-.15 1.54-.44 2.23-.85a3.4 3.4 0 01-1.54 1.94c.74-.1 1.4-.28 2.01-.54z" />
+                                            </svg>
+                                            <span class="visually-hidden">Twitter</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="icon-f">
+                                            <svg aria-hidden="true" focusable="false"
+                                                 role="presentation" class="icon icon-facebook" viewBox="0 0 18 18">
+                                                <path fill="currentColor"
+                                                      d="M16.42.61c.27 0 .5.1.69.28.19.2.28.42.28.7v15.44c0 .27-.1.5-.28.69a.94.94 0 01-.7.28h-4.39v-6.7h2.25l.31-2.65h-2.56v-1.7c0-.4.1-.72.28-.93.18-.2.5-.32 1-.32h1.37V3.35c-.6-.06-1.27-.1-2.01-.1-1.01 0-1.83.3-2.45.9-.62.6-.93 1.44-.93 2.53v1.97H7.04v2.65h2.24V18H.98c-.28 0-.5-.1-.7-.28a.94.94 0 01-.28-.7V1.59c0-.27.1-.5.28-.69a.94.94 0 01.7-.28h15.44z" />
+                                            </svg>
+                                            <span class="visually-hidden">Facebook</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="icon-p">
+                                            <svg aria-hidden="true" focusable="false"
+                                                 role="presentation" class="icon icon-pinterest" viewBox="0 0 17 18">
+                                                <path fill="currentColor"
+                                                      d="M8.48.58a8.42 8.42 0 015.9 2.45 8.42 8.42 0 011.33 10.08 8.28 8.28 0 01-7.23 4.16 8.5 8.5 0 01-2.37-.32c.42-.68.7-1.29.85-1.8l.59-2.29c.14.28.41.52.8.73.4.2.8.31 1.24.31.87 0 1.65-.25 2.34-.75a4.87 4.87 0 001.6-2.05 7.3 7.3 0 00.56-2.93c0-1.3-.5-2.41-1.49-3.36a5.27 5.27 0 00-3.8-1.43c-.93 0-1.8.16-2.58.48A5.23 5.23 0 002.85 8.6c0 .75.14 1.41.43 1.98.28.56.7.96 1.27 1.2.1.04.19.04.26 0 .07-.03.12-.1.15-.2l.18-.68c.05-.15.02-.3-.11-.45a2.35 2.35 0 01-.57-1.63A3.96 3.96 0 018.6 4.8c1.09 0 1.94.3 2.54.89.61.6.92 1.37.92 2.32 0 .8-.11 1.54-.33 2.21a3.97 3.97 0 01-.93 1.62c-.4.4-.87.6-1.4.6-.43 0-.78-.15-1.06-.47-.27-.32-.36-.7-.26-1.13a111.14 111.14 0 01.47-1.6l.18-.73c.06-.26.09-.47.09-.65 0-.36-.1-.66-.28-.89-.2-.23-.47-.35-.83-.35-.45 0-.83.2-1.13.62-.3.41-.46.93-.46 1.56a4.1 4.1 0 00.18 1.15l.06.15c-.6 2.58-.95 4.1-1.08 4.54-.12.55-.16 1.2-.13 1.94a8.4 8.4 0 01-5-7.65c0-2.3.81-4.28 2.44-5.9A8.04 8.04 0 018.48.57z" />
+                                            </svg>
+                                            <span class="visually-hidden">Pinterest</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="icon-i">
+                                            <svg aria-hidden="true" focusable="false"
+                                                 role="presentation" class="icon icon-instagram" viewBox="0 0 18 18">
+                                                <path fill="currentColor"
+                                                      d="M8.77 1.58c2.34 0 2.62.01 3.54.05.86.04 1.32.18 1.63.3.41.17.7.35 1.01.66.3.3.5.6.65 1 .12.32.27.78.3 1.64.05.92.06 1.2.06 3.54s-.01 2.62-.05 3.54a4.79 4.79 0 01-.3 1.63c-.17.41-.35.7-.66 1.01-.3.3-.6.5-1.01.66-.31.12-.77.26-1.63.3-.92.04-1.2.05-3.54.05s-2.62 0-3.55-.05a4.79 4.79 0 01-1.62-.3c-.42-.16-.7-.35-1.01-.66-.31-.3-.5-.6-.66-1a4.87 4.87 0 01-.3-1.64c-.04-.92-.05-1.2-.05-3.54s0-2.62.05-3.54c.04-.86.18-1.32.3-1.63.16-.41.35-.7.66-1.01.3-.3.6-.5 1-.65.32-.12.78-.27 1.63-.3.93-.05 1.2-.06 3.55-.06zm0-1.58C6.39 0 6.09.01 5.15.05c-.93.04-1.57.2-2.13.4-.57.23-1.06.54-1.55 1.02C1 1.96.7 2.45.46 3.02c-.22.56-.37 1.2-.4 2.13C0 6.1 0 6.4 0 8.77s.01 2.68.05 3.61c.04.94.2 1.57.4 2.13.23.58.54 1.07 1.02 1.56.49.48.98.78 1.55 1.01.56.22 1.2.37 2.13.4.94.05 1.24.06 3.62.06 2.39 0 2.68-.01 3.62-.05.93-.04 1.57-.2 2.13-.41a4.27 4.27 0 001.55-1.01c.49-.49.79-.98 1.01-1.56.22-.55.37-1.19.41-2.13.04-.93.05-1.23.05-3.61 0-2.39 0-2.68-.05-3.62a6.47 6.47 0 00-.4-2.13 4.27 4.27 0 00-1.02-1.55A4.35 4.35 0 0014.52.46a6.43 6.43 0 00-2.13-.41A69 69 0 008.77 0z" />
+                                                <path fill="currentColor"
+                                                      d="M8.8 4a4.5 4.5 0 100 9 4.5 4.5 0 000-9zm0 7.43a2.92 2.92 0 110-5.85 2.92 2.92 0 010 5.85zM13.43 5a1.05 1.05 0 100-2.1 1.05 1.05 0 000 2.1z" />
+                                            </svg>
+                                            <span class="visually-hidden">Instagram</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="icon-tumb">
+                                            <svg aria-hidden="true" focusable="false"
+                                                 role="presentation" class="icon icon-tumblr" viewBox="0 0 91 161">
+                                                <path fill-rule="evenodd"
+                                                      d="M64 160.3c-24 0-42-12.3-42-41.8V71.3H.3V45.7c24-6.2 34-26.9 35.2-44.7h24.9v40.5h29v29.8h-29v41.1c0 12.3 6.2 16.6 16.1 16.6h14v31.3H64"
+                                                      fill="currentColor" />
+                                            </svg>
+                                            <span class="visually-hidden">Tumblr</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="footer__content-bottom text-center">
+                    <div class="container">
+                        <div class="row">
+                            <div class="footer__copyright col-12">
+                                <span class="copyright__content">
+                                    &copy; 2023, <a href="/"
+                                                    title="">Nexus</a>
+                                </span>
+                                <span class="copyright__content">
+                                    <a target="_blank" rel="nofollow"
+                                       href="https://www.shopify.com?utm_campaign=poweredby&amp;utm_medium=shopify&amp;utm_source=onlinestore">
+                                        Powered
+                                        by Nexus_C2110G
+                                    </a>
+                                </span>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+                </div>
+                <a href="" id="scroll" style="display: block;"><i class="fa fa-angle-double-up"></i></a>
+            </footer>
+
+
+        </div>
+
+        <ul hidden>
+            <li id="a11y-refresh-page-message">Choosing a selection results in a full page refresh.</li>
+        </ul>
+
+        <div id="wbquickview" class="js-wbquickview"></div>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/jquery.min.js?v=133494139889153862371640687784"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/jquery.fancybox.min.js?v=183759526812225689971664540879"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/popper.min.js?v=8772223469220370781640687787"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/bootstrap.min.js?v=137179542109231419321640687762"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/slick.min.js?v=17653282001745831061640687795"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/countdown.min.js?v=183628871504181764921664542117"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/wbcustom.js?v=133927303160518434541640687800"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/countdown.min.js?v=183628871504181764921664542117"
+                defer="defer"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/wbcartdropdown.js?v=168107083126735237411664540837"
+                defer="defer"></script>
+
+
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/product-form.js?v=145274427960080480171640687788"></script>
+        <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/wbquickview.js?v=54369889994486737371664541021"
+                async></script>
+
+        @*chatbox*@
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+
+        @*<script src="~/lib/jquery/dist/jquery.min.js"></script>*@
+
+
+
+        <style>
+            .chat_icon {
+                position: fixed;
+                right: 20px;
+                bottom: 150px;
+                font-size: 65px;
+                color: darkorange;
+                cursor: pointer;
+                z-index: 1000;
+            }
+
+            .chatbot_box {
+                position: fixed;
+                right: 30px;
+                bottom: 290px;
+                background: pink;
+                width: 300px;
+                height: 50vh;
+                border-radius: 15px;
+                padding: 30px;
+                font-size: 16px;
+                box-shadow: 0 0 11px rgba(0,0,0,0.9);
+                z-index: 10000;
+                transition: all 0.3s ease-out;
+                transform: scaleY(0);
+            }
+
+                .chatbot_box.active {
+                    transform: scaleY(1);
+                }
+
+            .chatlist {
+                height: calc(50vh - 120px);
+                overflow-x: auto;
+                position: relative;
+                -ms-overflow-style: none;
+                scrollbar-width: auto;
+            }
+
+                .chatlist::-webkit-scrollbar {
+                    display: none;
+                }
+
+                .chatlist ul {
+                    margin: 0;
+                    padding: 0;
+                    list-style: none;
+                    position: absolute;
+                    width: 100%;
+                    bottom: 0;
+                    left: 0;
+                    max-height: 100%;
+                }
+
+                    .chatlist ul li.admin-message {
+                        background-color: brown;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 0 20px 20px 20px;
+                        margin: 15px 30% 15px 5px;
+                        text-transform: capitalize;
+                        box-shadow: 0 0 4px rgba(0,0,0,0.3);
+                    }
+
+                    .chatlist ul li.client-message {
+                        background-color: blueviolet;
+                        color: white;
+                        padding: 10px 20px;
+                        border-radius: 20px 0px 20px 20px;
+                        margin: 15px 5px 15px 30%;
+                        text-transform: capitalize;
+                        box-shadow: 0 0 4px rgba(0,0,0,0.3);
+                    }
+
+            .message-box-wrap {
+                position: relative;
+                margin-top: 20px;
+            }
+
+            .message-box input[type="text"],
+            .message-box select {
+                height: 40px;
+                padding: 10px;
+                line-height: 20px;
+                width: calc(100%-50px);
+                border-radius: 10px;
+                border: 1px solid #bcb3b3;
+            }
+
+            .message-box button {
+                width: 100px;
+                height: 40px;
+                padding: 10px;
+                line-height: 20px;
+                border-radius: 10px;
+                border: 1px solid #bcb3b3;
+            }
+
+            #send {
+                height: 40px;
+                width: 40px;
+                position: absolute;
+                right: 0;
+                top: 0;
+                color:black;
+                border-radius: 50%;
+                background-color: white;
+                border: 0 !important;
+                outline: 0 !important;
+            }
+
+            .admin-client-message-wrap,
+            #submit_info_form {
+                opacity: 0;
+                width: 0;
+                height: 0;
+                overflow: hidden;
+                margin: 0;
+                padding: 0;
+            }
+        </style>
+
+
+        <div class="chat_icon">
+            <i class="fa-sharp fa-solid fa-comments"></i>
+        </div>
+        <div class="chatbot_box">
+            <div class="chatlist">
+                <ul>
+                </ul>
+            </div>
+            <div class="message-box-wrap">
+                <div class="message-box">
+                    <input type="hidden" id="hiden" value="" />
+                </div>
+                <button id="send">▶</button>
+            </div>
+            <div class="admin-client-message-wrap">
+                <select name="service" id="service" data-question="which service u went">
+                    <option value="" selected disabled>Choose Service</option>
+                    <option value="">Service Phone</option>
+                    <option value="">Service Internet</option>
+                </select>
+                <input type="text" class="name" name="name" data-question="" value="To make a form related to the phone service package: Option 1: You choose the ServicePlan category. Method 2: You select the package you want to rent, then click rent. Method 3: You fill in instructions then proceed to payment. Note: Please pay the full fee at the beginning of the change month." />
+                <input type="text" class="email" name="email" data-question="what is your email?" value="To make a form related to the internet service package: Method 1: You select the ServicePlan item. Method 2: You select the Internet Service folder Method 3: You select the package you want to rent and then click rent. Method 4: You fill in the information according to the instructions and then proceed to make the payment. Note: Please pay the fee in full at the beginning of the change month." />
+
+            </div>
+            <form id="submit_info_form">
+                <div class="submit_info"></div>
+                <input type="submit" value="Send" id="submit" name="" />
+            </form>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $('.chat_icon').click(function (event) {
+                    $('.chatbot_box').toggleClass('active');
+                });
+            })
+
+
+            questionFirst = $('[data-question]:first').attr('data-question');
+            $('.chatlist ul').append('<li class="admin-message">' + questionFirst + '</li>');
+            $('[data-question]:first').appendTo('.message-box');
+
+
+            $('#send').click(function (event) {
+                service = $('#service option:selected').text();
+                if (service == "Choose Service") {
+                    return 0;
+                }
+                questionVal = $('#service option:selected').text();
+                $('.chatlist ul').append('<li class="client-message">' + questionVal + '</li>')
+
+
+                $('.messge-box input').appendTo('.submit_info');
+                if ($('.admin-client-message-wrap').children().length != 0) {
+                    if (service == "Service Phone") {
+                        $('.chatlist ul').append('<li class="admin-message">' + $('.name').val() + '</li>');
+                    } else {
+                        $('.chatlist ul').append('<li class="admin-message">' + $('.email').val() + '</li>');
+                    }
+                }
+
+            });
+
+        </script>
+
+
+</body>
+
+</html>

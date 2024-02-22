@@ -1,0 +1,77 @@
+﻿@using Nexus.Models.ModelView;
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h3 class="text-center"><strong>Cancelled</strong></h3>
+<br />
+<br />
+<div id="main-cart-items" data-id="template--15388007727267__cart-items">
+    <div class="js-contents">
+        <table class="cart-items table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" style="width:auto"><strong>Information</strong></th>
+                    <th scope="col"><strong>Category</strong></th>
+
+                    <th scope="col"><strong>Service</strong></th>
+                    <th scope="col"><strong>Order Date</strong></th>
+
+                    <th scope="col"><strong>Quantity</strong></th>
+                    <th scope="col"><strong>Expiry</strong></th>
+                    <th scope="col"><strong>Total</strong></th>
+                    <th scope="col"><strong>The Amount Paid</strong></th>
+
+                    <th scope="col"><strong>Status Paid</strong></th>
+
+
+                    <th scope="col"><strong>Connection Date</strong></th>
+                    <th scope="col"><strong>Expiration Date</strong></th>
+                    <th scope="col"><strong>Status Service</strong></th>
+                    <th scope="col"><strong></strong></th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (StorageView item in ViewBag.OrderCancel)
+                {
+                    <tr>
+                        <td>Name: @item.Name - Phone: @item.Phone - Address: @item.Address</td>
+                        @if (item.IdCategory == 1)
+                        {
+                            <td>Service Phone</td>
+                        }
+                        else
+                        {
+                            <td>Service Internet</td>
+                        }
+                        <td>@item.NameService</td>
+
+                        <td>@item.OrderDate</td>
+                        <td>@item.Quantity</td>
+
+                        <td>@item.ExpiryDate</td>
+                        <td>@item.Total</td>
+
+                        <td>@item.TheAmountPaid</td>
+                        <td>@item.StatusPaid</td>
+
+                        <td>@item.ConnectionDate </td>
+                        <td>@item.ExpirationDate</td>
+                        @if (item.StatusService == 3)
+                        {
+                            <td>
+                                Cancelled
+                            </td>
+
+                        }
+                        <td>
+                            <a class="btn btn-danger" href="/CusBuying/Information?ServicePlanID=@item.IdServicePlan">Repurchase</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

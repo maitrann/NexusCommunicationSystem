@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+<div class="container">
+    <nav class="breadcrumb row" role="navigation" aria-label="breadcrumbs">
+        <div class="col-12">
+            <a href="/" title="Home">Home</a>
+
+            <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+            <span>Search Store</span>
+
+        </div>
+    </nav>
+</div>
+<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <div id="shopify-section-template--15388007760035__banner" class="shopify-section spaced-section--full-width">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-collection-hero.css?v=108030866805168508941640687767"
+              rel="stylesheet" type="text/css" media="all">
+        <div class="container collection-hero">
+            <h1 class="heading"><span class="visually-hidden">Collection: </span><span>Search Store</span></h1>
+            <div class="row">
+                <div class=" col-md-10 col-sm-12 col-12  collection-hero__text-wrapper">
+                    <div class="collection-hero__description rte"></div>
+                </div>
+            </div>
+
+
+            <div class="content">
+                <h5 class="Search-store__name">District information*</h5>
+                <div class="select" style="width: 20%;">
+                    <select name="SelectExpiry" class="facet-filters__sort select__select caption-large" id="SelectExpiry" aria-describedby="a11y-refresh-page-message">
+                        <option value="0">Select District</option>
+                        @for (int i = 0; i < ViewBag.lsDistrict.Count; i++)
+                        {
+                            <option value="@ViewBag.lsDistrict[i].Id">@ViewBag.lsDistrict[i].Name</option>
+                        }
+
+                    </select>
+                    <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z">
+                        </path>
+                    </svg>
+
+                </div>
+            </div>
+
+            <br />
+            <br />
+            <div class="collection container">
+                @*//partiview*@
+                <div id="revenueComponent">
+                    @Html.Partial("_SearchStore")
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+<script src="https://code.jquery.com/jquery-3.6.3.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("select").change(function () {
+            $.ajax({
+                type: "Get",
+                url: "/SearchStore/SearchStore?id=" + $("#SelectExpiry").val(),  //remember change the controller to your owns.
+                success: function (data) {
+                    $("#revenueComponent").html("");
+                    $("#revenueComponent").html(data);
+                },
+                error: function (response) {
+                    console.log(response.responseText);
+                }
+            });
+        });
+    });
+
+</script>
+
+
+

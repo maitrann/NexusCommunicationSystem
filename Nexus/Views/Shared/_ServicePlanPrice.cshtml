@@ -1,0 +1,152 @@
+﻿@model List<Nexus.Models.ModelView.ServicePlanView>
+
+
+
+
+
+
+<div class="row">
+    <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-facets.css?v=113744239838463669621640687768"
+          rel="stylesheet" type="text/css" media="all">
+    <script src="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/facets.js?v=123462745317715690791640687779"
+            defer="defer"></script>
+
+
+
+    <div class="loading-overlay gradient"></div>
+    <ul id="product-grid" data-id="template--15388007760035__product-grid"
+        class="row rless grid product-grid">
+        @if (Model != null)
+        {
+            List<Nexus.Models.ModelView.ServicePlanView> ls = Model;
+            foreach (var item in ls)
+            {
+                var iPhotoUrl = Url.Content("~/Image/") + item.Image;
+                <li class="grid__item col-6 col-sm-4 col-md-6 col-lg-4 col-xl-4 cless">
+                    <div class="card-wrapper wbproduct-container card">
+                        <div class="wbimgblock">
+                            <div id="webipro-template--15388007760035__product-grid-5843136577699"
+                         class="imgblockslide slider card__media">
+                                <div class="product__media-item"
+                             data-media-id="template--15388007760035__product-grid-5843136577699-12036538466467">
+                                    @*  Note View By ID*@
+                                    <a href="/ServicePlan/ServicePlanDetail/@item.Id" title="Products">
+                                        <img class="img-fluid mx-auto" style="height:468px !important"
+                                     srcset="@iPhotoUrl 430w"
+                                     src="@iPhotoUrl 453w"
+                                     loading="lazy" width="430" alt="">
+                                    </a>
+                                </div>
+                                <div class="product__media-item"
+                             data-media-id="template--15388007760035__product-grid-5843136577699-12036542824611">
+                                    <a href="/products/unique-baby-oil-painting" title="Products">
+                                        <img class="img-fluid mx-auto"
+                                     srcset="@iPhotoUrl 430w"
+                                     src="@iPhotoUrl 453w"
+                                     loading="lazy" width="430" height="453" alt="">
+                                    </a>
+                                </div>
+                                <div class="product__media-item"
+                             data-media-id="template--15388007760035__product-grid-5843136577699-12036545675427">
+                                    <a href="/products/unique-baby-oil-painting" title="Products">
+                                        <img class="img-fluid mx-auto"
+                                     srcset="//cdn.shopify.com/s/files/1/0508/0409/7187/products/7_bd3ecb7f-144f-46eb-8a88-ee846ca80383_430x.jpg?v=1604991526 430w"
+                                     src="//cdn.shopify.com/s/files/1/0508/0409/7187/products/7_bd3ecb7f-144f-46eb-8a88-ee846ca80383_453x.jpg?v=1604991526 453w"
+                                     loading="lazy" width="430" height="453" alt="">
+                                    </a>
+                                </div>
+                                <div class="product__media-item"
+                             data-media-id="template--15388007760035__product-grid-5843136577699-12036550197411">
+                                    <a href="/products/unique-baby-oil-painting" title="Products">
+                                        <img class="img-fluid mx-auto"
+                                     srcset="//cdn.shopify.com/s/files/1/0508/0409/7187/products/2_4c490322-9e04-456c-95dd-cf40c089b381_430x.jpg?v=1604991542 430w"
+                                     src="//cdn.shopify.com/s/files/1/0508/0409/7187/products/2_4c490322-9e04-456c-95dd-cf40c089b381_453x.jpg?v=1604991542 453w"
+                                     loading="lazy" width="430" height="453" alt="">
+                                    </a>
+                                </div>
+                                <div class="button-group">
+                                    <div class="wbqvtop">
+                                        <a href="/ServicePlan/ServicePlanDetail/@item.Id" class="wbquickv"
+                                   aria-label="Quickview">
+                                            <svg viewBox="0 0 511.999 511.999">
+                                                <path d="M508.745,246.041c-4.574-6.257-113.557-153.206-252.748-153.206S7.818,239.784,3.249,246.035
+c-4.332,5.936-4.332,13.987,0,19.923c4.569,6.257,113.557,153.206,252.748,153.206s248.174-146.95,252.748-153.201
+C513.083,260.028,513.083,251.971,508.745,246.041z M255.997,385.406c-102.529,0-191.33-97.533-217.617-129.418
+c26.253-31.913,114.868-129.395,217.617-129.395c102.524,0,191.319,97.516,217.617,129.418
+C447.361,287.923,358.746,385.406,255.997,385.406z"></path>
+                                                <path d="M255.997,154.725c-55.842,0-101.275,45.433-101.275,101.275s45.433,101.275,101.275,101.275
+s101.275-45.433,101.275-101.275S311.839,154.725,255.997,154.725z M255.997,323.516c-37.23,0-67.516-30.287-67.516-67.516
+s30.287-67.516,67.516-67.516s67.516,30.287,67.516,67.516S293.227,323.516,255.997,323.516z">
+                                                </path>
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card__badge"></div>
+
+
+
+                        </div>
+                        <div class="wbproductdes">
+
+
+                            <h3 class="product-title">
+                                <a href="/ServicePlan/ServicePlanDetail/@item.Id">
+                                    @item.Name
+                                </a>
+                            </h3>
+                            <span class="caption-large light"></span>
+                            <p class="wblistpdesc">
+                                Ut efficitur pulvinar neque, at rhoncus leo sagittis at. Mauris commodo quam
+                                vel fringilla semper. Aenean sagittis purus ipsum, id aliquet justo aliquet
+                                ac. In hac...
+                            </p>
+
+                            <div class="wbhrating">
+                                <div class="rating"
+                             style="font-size: 15px;font-family: cursive;margin-bottom: 4px;">
+                                    @item.Price$
+                                </div>
+
+                            </div>
+                            <div id="ProductInfo-template--15388007760035__product-grid-5843136577699">
+
+                                <variant-radios class="no-js-hidden new-swatch variant-webi"
+                                        data-section="template--15388007760035__product-grid"
+                                        data-product="5843136577699"
+                                        data-url="/products/unique-baby-oil-painting" data-update-url="false"
+                                        data-layout="card">
+
+
+
+                                </variant-radios><product-form class="product-form">
+
+
+                                    <a href="/CusBuying/Information?ServicePlanID=@item.Id" type="submit" name="add" style="margin-left: -2px;"
+                               class="cartb product-form__submit button">
+                                        <svg viewBox="0 0 511 511.99913">
+                                            <path d="m512.496094 172v80c0 11.046875-8.953125 20-20 20h-13.152344l-8.425781 74.988281c-1.148438 10.21875-9.804688 17.765625-19.851563 17.769531-.746094 0-1.496094-.042968-2.257812-.128906-10.976563-1.230468-18.875-11.132812-17.640625-22.105468l10.421875-92.753907c1.136718-10.117187 9.691406-17.769531 19.875-17.769531h11.035156v-40h-432v40h341c11.046875 0 20 8.957031 20 20 0 11.046875-8.953125 20-20 20h-307.226562l19.75 164.761719c2.40625 20.089843 19.480468 35.238281 39.714843 35.238281h247.125c20.382813 0 37.472657-15.277344 39.75-35.535156 1.230469-10.976563 11.128907-18.871094 22.105469-17.640625 10.976562 1.234375 18.875 11.132812 17.644531 22.109375-4.554687 40.511718-38.730469 71.066406-79.5 71.066406h-247.125c-40.46875 0-74.617187-30.300781-79.433593-70.480469l-20.316407-169.519531h-13.488281c-11.046875 0-20-8.953125-20-20v-80c0-11.046875 8.953125-20 20-20h70.9375l105.683594-143.839844c6.539062-8.898437 19.054687-10.816406 27.957031-4.273437 8.902344 6.539062 10.816406 19.054687 4.277344 27.957031l-88.28125 120.15625h231.589843l-88.285156-120.15625c-6.539062-8.902344-4.625-21.417969 4.277344-27.957031 8.902344-6.542969 21.417969-4.628907 27.960938 4.273437l105.679687 143.839844h70.199219c11.046875 0 20 8.957031 20 20zm-275.996094 160v80c0 11.046875 8.953125 20 20 20 11.042969 0 20-8.953125 20-20v-80c0-11.046875-8.957031-20-20-20-11.046875 0-20 8.953125-20 20zm80 0v80c0 11.046875 8.953125 20 20 20 11.042969 0 20-8.953125 20-20v-80c0-11.046875-8.957031-20-20-20-11.046875 0-20 8.953125-20 20zm-160 0v80c0 11.046875 8.953125 20 20 20 11.042969 0 20-8.953125 20-20v-80c0-11.046875-8.957031-20-20-20-11.046875 0-20 8.953125-20 20zm0 0">
+                                            </path>
+                                        </svg><span>Buy It</span>
+                                        <div class="loading-overlay__spinner hidden">
+                                            <svg aria-hidden="true" focusable="false" role="presentation"
+                                         class="spinner" viewBox="0 0 66 66"
+                                         xmlns="http://www.w3.org/2000/svg">
+                                                <circle class="path" fill="none" stroke-width="6" cx="33"
+                                                cy="33" r="30"></circle>
+                                            </svg>
+                                        </div>
+                                    </a>
+                                </product-form>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div>

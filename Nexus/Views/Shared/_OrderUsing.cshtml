@@ -1,0 +1,156 @@
+﻿@using Nexus.Models.ModelView;
+
+@*
+    For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
+*@
+<h3 class="text-center"><strong>Using</strong></h3>
+<br />
+<br />
+<div id="main-cart-items" data-id="template--15388007727267__cart-items">
+    <div class="js-contents">
+        <table class="cart-items table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col" style="width:auto"><strong>Information</strong></th>
+                    <th scope="col"><strong>Category</strong></th>
+
+                    <th scope="col"><strong>Service</strong></th>
+                    <th scope="col"><strong>Order Date</strong></th>
+
+                    <th scope="col"><strong>Quantity</strong></th>
+                    <th scope="col"><strong>Expiry</strong></th>
+                    <th scope="col"><strong>Total</strong></th>
+                    <th scope="col"><strong>The Amount Paid</strong></th>
+
+                    <th scope="col"><strong>Status Paid</strong></th>
+
+
+                    <th scope="col"><strong>Connection Date</strong></th>
+                    <th scope="col"><strong>Expiration Date</strong></th>
+                    <th scope="col"><strong>Status Service</strong></th>
+                    <th scope="col"><strong></strong></th>
+
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (StorageView item in ViewBag.OrderUsing)
+                {
+                    <tr>
+                        <td>Name: @item.Name - Phone: @item.Phone - Address: @item.Address</td>
+                        @if (item.IdCategory == 1)
+                        {
+                            <td>Service Phone</td>
+                        }
+                        else
+                        {
+                            <td>Service Internet</td>
+                        }
+                        <td>@item.NameService</td>
+
+                        <td>@item.OrderDate</td>
+                        <td>@item.Quantity</td>
+
+                        <td>@item.ExpiryDate</td>
+                        <td>@item.Total</td>
+
+                        <td>@item.TheAmountPaid</td>
+                        <td>@item.StatusPaid</td>
+                        @if (item.ConnectionDate == null && item.ExpirationDate == null)
+                        {
+                            <td>Pending...</td>
+                            <td>Pending...</td>
+                        }
+                        else
+                        {
+                            <td>@item.ConnectionDate </td>
+                            <td>@item.ExpirationDate</td>
+                        }
+
+                        @if (item.StatusService == 1)
+                        {
+                            <td>
+                                Active
+                            </td>
+                            @if (item.IdCategory == 1)
+                            {
+                                <td>
+                                    <a href="/Storage/CancelSP?id=@item.OrderID" class="btn btn-danger">Cancel</a>
+                                </td>
+                            }
+                            else
+                            {
+                                @for (int i = 0; i < ViewBag.ProExchange.Count; i++)
+                                {
+
+                                    @if (ViewBag.ProExchange[i].BillID == item.IdBill)
+                                    {
+                                        @if (ViewBag.ProExchange[i].Status == false)
+                                        {
+                                            <td>
+                                                Pending change...
+                                            </td>
+                                        }
+                                        else if (ViewBag.ProExchange[i].Status == true)
+                                        {
+                                            <td>Change success</td>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td>
+                                            <!-- Button trigger modal -->
+                                            <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#exampleModalCenter">
+                                                Change
+                                            </a>
+
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <div class="modal-body">
+                                                                <form method="post" action="/Storage/ChangeService?idBill=@item.IdBill">
+                                                                    <div class="form-group">
+                                                                        <label for="quantityChange" class="col-form-label">Quantity change:</label>
+                                                                        <input type="number" class="form-control" id="quantityChange" name="quantityChange">
+                                                                    </div>
+                                                                    <div class="form-group">
+                                                                        <label for="reason" class="col-form-label">Reason:</label>
+                                                                        <textarea class="form-control" id="reason" name="reason"></textarea>
+                                                                    </div>
+                                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+
+                                                                </form>
+                                                            </div>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                    }
+                                }
+
+                            }
+                        }
+                        else if (item.StatusService == 0)
+                        {
+                            <td>
+                                Pending...
+                            </td>
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

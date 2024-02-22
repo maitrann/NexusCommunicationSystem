@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "_LayoutPage";
+}
+@model List<Nexus.Models.Blog>
+<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+    <section id="shopify-section-template--15388007694499__main" class="shopify-section">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/component-card.css?v=89485629491935090781664598352" rel="stylesheet" type="text/css" media="all">
+        <link href="//cdn.shopify.com/s/files/1/0508/0409/7187/t/5/assets/section-main-blog.css?v=109592984929768354591640687792" rel="stylesheet" type="text/css" media="all">
+        <div class="wbmainblog container">
+            <h1 class="heading"><span>News</span></h1>
+
+            <div class="row blog-articles  text-center ">
+                @for(int i = 0; i < Model.Count; i++)
+                {
+                    <div class="blog-articles__article article col-lg-6 col-12 ">
+                        <article class="article-card ">
+                            <div class="wbblogimg ">
+                                <a href="/Blog/Detail/@Model[i].Id" class="article-content motion-reduce">
+                                    <img srcset="~/Image/@Model[i].Image 1170w" src="~/Image/@Model[i].Image" alt="@Model[i].Name" width="1170" height="544" loading="lazy" class="motion-reduce img-fluid mx-auto">
+                                </a>
+                            </div><div class="wbblogimgdesc ">
+                                <div class="tag-section">
+                                </div><h2><a href="/Blog/Detail/@Model[i].Id">@Model[i].Name</a></h2><p class="wbblogtxt" style="
+                                      display:inline-block;
+                                      white-space: nowrap;
+                                      overflow: hidden;
+                                      text-overflow: ellipsis;
+                                      max-width: 40ch;">
+                                    @*@Model[i].Description*@
+                                    @Html.Raw(Model[i].Description)
+                                </p>
+                                @*<div class="allblgdate"><div class="wbblogauth">Winter Infotech</div><div class="wbblogdate"><time datetime="2020-11-06T05:39:42Z">November 6, 2020</time></div><div class="article-card__footer"><i class="fa fa-comments-o"></i><span>&nbsp;0</span></div></div>*@
+                            </div>
+                        </article>
+                    </div>
+                }
+
+            </div>
+        </div>
+    </section>
+</main>
+

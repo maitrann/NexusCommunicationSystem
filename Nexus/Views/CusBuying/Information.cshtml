@@ -1,0 +1,397 @@
+﻿@using Nexus.Models.ModelView;
+@{
+    ViewData["Title"] = "Information";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+    ServicePlanView service = (ServicePlanView)ViewBag.ServicePlan;
+}
+@model List<Nexus.Models.Option>
+<div class="container">
+    <nav class="breadcrumb row" role="navigation" aria-label="breadcrumbs">
+        <div class="col-12">
+            <a href="/" title="Home">Home</a>
+            <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+            <span>Service Plan</span>
+            <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+            <span>Detail</span>
+            <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+            <span>Fill information</span>
+        </div>
+    </nav>
+</div>
+<main id="MainContent" class="content-for-layout focus-none" role="main" tabindex="-1">
+
+</main>
+<div id="app">
+    <div class="_1coqx425d" style="--x-color-canvas-accent:rgb(207,174,122); --x-color-color1-accent:rgb(207,174,122); --x-color-color2-accent:rgb(207,174,122); --x-color-primary:rgb(207,174,122); --x-color-primary-hovered:rgb(176,148,103); --x-color-primary-text:rgb(18,13,6); --x-color-primary-text-hovered:rgb(18,13,6); --x-color-primary-border:rgb(176,148,103); --x-color-primary-disabled:rgb(179,179,179); --x-color-secondary-action:rgb(207,174,122); --x-color-secondary-action-hovered:rgb(176,148,103); --x-color-secondary-action-text:rgb(18,13,6); --x-color-secondary-action-text-hovered:rgb(18,13,6); --x-color-secondary-action-disabled:rgb(179,179,179); --x-color-interactive-text:rgb(207,174,122); --x-color-interactive-on-text:rgb(0,0,0); --x-color-interactive-text-hovered:rgb(235,201,150); --x-color-interactive-foreground-as-subdued-background:rgb(251,246,239); --x-color-interactive-text-subdued-on-foreground-as-subdued-background:rgb(109,104,97); --_1coqx42w:rgb(207,174,122); --_1coqx4217:rgb(207,174,122); --_1coqx421i:rgb(207,174,122);">
+        <div class="g9gqqf1 _1fragemb1 _1fragem1i">
+            <div class="_1fragem14 _1fragema3">
+                <div role="region" aria-labelledby="step-section-primary-header">
+                    <div class="Yil88 TpQRn ny1C6" style="min-height: 70vh;">
+                        <a href="#checkout-main" class="XSnuw">Skip to content</a><div class="_1fragem14 _1fragema5 _1fragema3"><h1 class="n8k95w1 _1fragema3 n8k95w2">Information</h1></div><div class="I3DjT TeFT5">
+                            <div class="RTcqB" style="background-color: var(--x-color-color2-background);">
+                                <header role="banner" class="nBWgL">
+                                    <div>
+                                        <div class="_1fragem14 _1fragem8g _1fragem8w _1fragem80 _1fragem9c _1fragema3">
+                                            <div class="T50Pa Layout0 Z5iCK rhUtJ">
+                                                <style>
+                                                    .Layout0 > .i602M > :nth-child(1) {
+                                                        flex: 0 0 100%;
+                                                    }
+
+                                                    .Layout0 > .i602M {
+                                                        flex-wrap: wrap;
+                                                    }
+
+                                                    .Layout0 > .i602M {
+                                                        max-width: 56rem;
+                                                    }
+
+                                                    @@media all and (min-width: 1000px) {
+                                                        .Layout0 > .i602M {
+                                                            max-width: 100%;
+                                                        }
+                                                    }</style>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </header><aside class="_PiNS CiOA7"><button type="button" class="go8Cy" aria-pressed="false" aria-controls="disclosure_content" aria-expanded="false"><span class="iibJ6"><div class="_1fragem16 _1fragema3 _1fragem34"><div class="_5uqybw2 _1fragem16 _1fragem9f _1fragem1q _1fragem26 _1fragem0 _1fragem4 _1fragem34"><span class="_1fragem30 _1fragemz _1fragem9e _1fragem9d a8x1wu4 _1fragem14 a8x1wui a8x1wuf a8x1wum"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" role="img" class="a8x1wuo _1fragem14 _1fragem30 _1fragem9e _1fragem9d" focusable="false" aria-hidden="true"><circle cx="3.5" cy="11.9" r="0.3"></circle><circle cx="10.5" cy="11.9" r="0.3"></circle><path stroke-linecap="round" stroke-linejoin="round" d="M3.502 11.898h-.004v.005h.004v-.005Zm7 0h-.005v.005h.005v-.005ZM1.4 2.1h.865a.7.7 0 0 1 .676.516l1.818 6.668a.7.7 0 0 0 .676.516h5.218a.7.7 0 0 0 .68-.53l1.05-4.2a.7.7 0 0 0-.68-.87H3.4"></path></svg></span><span class="_19gi7yt0 _19gi7ytf _1fragem1i">Show order summary<div class="_1fragem18 _16s97g723 _16s97g71g"></div><span class="_1fragem30 _1fragemz _1fragem9e _1fragem9d a8x1wu4 a8x1wue _1fragem18 a8x1wug a8x1wum"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" role="img" class="a8x1wuo _1fragem14 _1fragem30 _1fragem9e _1fragem9d" focusable="false" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="m11.9 5.6-4.653 4.653a.35.35 0 0 1-.495 0L2.1 5.6"></path></svg></span></span></div></div><div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1q _1fragem26 _1fragem37"><p class="_1x52f9s1 _1fragema3 _1x52f9sq _1fragem1k _1x52f9s2 _1x52f9sg notranslate" translate="yes">₹2,500.00</p></div></span></button><div id="disclosure_content" class="_94sxtb1 _1fragem7i _1fragem7k _1fragema3 _1fragemaj _1fragemae _1fragemam" hidden="" style="height: 0px;"><div></div></div></aside>
+                                <div class="dh43e">
+                                    <div class="_1fragem14 _1fragema3">
+                                        <div class="I_61l">
+                                            <div class="tAyc6">
+                                                <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1s _1fragem28">
+                                                    <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1x _1fragem2d">
+                                                        <main id="checkout-main">
+                                                            <form action="/CusBuying/Checkout/@ViewBag.service.ServicePlanID" method="POST" novalidate="" class="_1fragem15" id="Form2">
+                                                                <div class="_1fragema3">
+                                                                    <div>
+                                                                        <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1u _1fragem2a"></div><div class="VheJw">
+                                                                            <div class="s_qAq">
+                                                                                <section class="_1fragem14 _1fragema3" aria-label="Contact">
+                                                                                </section>
+                                                                                <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1x _1fragem2d">
+                                                                                    <section class="_1fragem14 _1fragema3" aria-label="Personal information">
+                                                                                        <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1s _1fragem28">
+                                                                                            <h2 class="n8k95w1 _1fragema3 n8k95w3">Personal information</h2><div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1s _1fragem28">
+                                                                                                <div id="shippingAddressForm">
+                                                                                                    <div class="pxSEU" aria-hidden="false">
+                                                                                                        <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1s _1fragem28">
+                                                                                                            <div class="_1fragema3 _1fragem1a _1mrl40q3 _1fragem1s _1fragem28 _16s97g73 _16s97g75 _16s97g7b _16s97g7d" style="--_16s97g72:minmax(0, 1fr); --_16s97g74:minmax(0, 1fr); --_16s97g7a:minmax(0, 1fr); --_16s97g7c:minmax(0, 1fr);">
+                                                                                                                <div class="_7ozb2u2 _1fragem1o _1fragem24 _1fragema3 _1fragem1a _10vrn9p1 _10vrn9p0 _10vrn9p6">
+                                                                                                                    <div class="_1fragema3">
+                                                                                                                        <label id="TextField8-label" for="TextField8" class="cektnc3 _1fragema1 _1fragema0 _1fragem9j _1fragemar _1fragemah _1fragemad _1fragemap">
+                                                                                                                            <span class="cektnc9"><span class="rermvf1 _1fragem7i _1fragem7k _1fragem14">Name</span></span>
+                                                                                                                        </label>
+                                                                                                                        <div class="_7ozb2u4 _1fragema3 _1fragem1a _1fragem13 _1fragemah _1fragemad _1fragemap _1fragemaq _7ozb2uc _7ozb2un _7ozb2up _7ozb2uj">
+                                                                                                                            <input id="TextField8" name="firstName" placeholder="Name" class="_7ozb2uu _1fragema3 _1fragemar _1fragem30 _1fragem9z _7ozb2uv _7ozb2u15 _7ozb2u1n" type="text" aria-required="false" aria-labelledby="TextField8-label" autocomplete="shipping given-name">
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="_1fragema3 _1fragem1a _1mrl40q3 _1fragem1s _1fragem28 _16s97g73 _16s97g75 _16s97g7b _16s97g7d" style="--_16s97g72:minmax(0, 1fr); --_16s97g74:minmax(0, 1fr); --_16s97g7a:minmax(0, 1fr); --_16s97g7c:minmax(0, 1fr);">
+                                                                                                                <div class="Vob8N">
+                                                                                                                    <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1q _1fragem26">
+                                                                                                                        <div class="_7ozb2u2 _1fragem1o _1fragem24 _1fragema3 _1fragem1a _10vrn9p1 _10vrn9p0 _10vrn9p6">
+                                                                                                                            <div class="_1fragema3">
+                                                                                                                                <label id="TextField10-label" for="TextField10" class="cektnc3 _1fragema1 _1fragema0 _1fragem9j _1fragemar _1fragemah _1fragemad _1fragemap">
+                                                                                                                                    <span class="cektnc9">
+                                                                                                                                        <span class="rermvf1 _1fragem7i _1fragem7k _1fragem14">Address</span>
+                                                                                                                                    </span>
+                                                                                                                                </label>
+                                                                                                                                <div class="_7ozb2u4 _1fragema3 _1fragem1a _1fragem13 _1fragemah _1fragemad _1fragemap _1fragemaq _7ozb2uc _7ozb2un _7ozb2up _7ozb2uj">
+                                                                                                                                    <input id="TextField10" name="address1" class="_7ozb2uu _1fragema3 _1fragemar _1fragem30 _1fragem9z _7ozb2uv _7ozb2u15 _7ozb2u1n" required="" type="text" aria-required="true" aria-labelledby="TextField10-label" autocomplete="shipping address-line1" placeholder="Address">
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="_1fragema3 _1fragem1a _1mrl40q3 _1fragem1s _1fragem28 _16s97g73 _16s97g75 _16s97g7b _16s97g7d" style="--_16s97g72:minmax(0, 1fr); --_16s97g74:minmax(0, 1fr); --_16s97g7a:minmax(0, 1fr); --_16s97g7c:minmax(0, 1fr);">
+                                                                                                                <div class="Vob8N">
+                                                                                                                    <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1q _1fragem26">
+                                                                                                                        <div class="_7ozb2u2 _1fragem1o _1fragem24 _1fragema3 _1fragem1a _10vrn9p1 _10vrn9p0 _10vrn9p6">
+                                                                                                                            <div class="_1fragema3">
+                                                                                                                                <label id="TextField10-label" for="TextField11" class="cektnc3 _1fragema1 _1fragema0 _1fragem9j _1fragemar _1fragemah _1fragemad _1fragemap">
+                                                                                                                                    <span class="cektnc9">
+                                                                                                                                        <span class="rermvf1 _1fragem7i _1fragem7k _1fragem14">Email</span>
+                                                                                                                                    </span>
+                                                                                                                                </label>
+                                                                                                                                <div class="_7ozb2u4 _1fragema3 _1fragem1a _1fragem13 _1fragemah _1fragemad _1fragemap _1fragemaq _7ozb2uc _7ozb2un _7ozb2up _7ozb2uj">
+                                                                                                                                    <input id="TextField11" name="address1" class="_7ozb2uu _1fragema3 _1fragemar _1fragem30 _1fragem9z _7ozb2uv _7ozb2u15 _7ozb2u1n" required="" type="email" aria-required="true" aria-labelledby="TextField10-label" autocomplete="shipping address-line1" placeholder="Email">
+                                                                                                                                </div>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="_1fragema3 _1fragem1a _1mrl40q3 _1fragem1s _1fragem28 _16s97g73 _16s97g75 _16s97g7b _16s97g7d" style="--_16s97g72:minmax(0, 1fr); --_16s97g74:minmax(0, 1fr); --_16s97g7a:minmax(0, 1fr); --_16s97g7c:minmax(0, 1fr);">
+                                                                                                                <div class="_7ozb2u2 _1fragem1o _1fragem24 _1fragema3 _1fragem1a _10vrn9p1 _10vrn9p0 _10vrn9p6">
+                                                                                                                    <div class="_1fragema3">
+                                                                                                                        <label id="TextField12-label" for="TextField12" class="cektnc3 _1fragema1 _1fragema0 _1fragem9j _1fragemar _1fragemah _1fragemad _1fragemap">
+                                                                                                                            <span class="cektnc9">
+                                                                                                                                <span class="rermvf1 _1fragem7i _1fragem7k _1fragem14">Phone</span>
+                                                                                                                            </span>
+                                                                                                                        </label>
+                                                                                                                        <div class="_7ozb2u4 _1fragema3 _1fragem1a _1fragem13 _1fragemah _1fragemad _1fragemap _1fragemaq _7ozb2uc _7ozb2un _7ozb2up _7ozb2uj">
+                                                                                                                            <input id="TextField12" maxlength="10" name="phone" class="_7ozb2uu _1fragema3 _1fragemar _1fragem30 _1fragem9z _7ozb2uv _7ozb2u15 _7ozb2u1n" required="" type="text" aria-required="true" aria-labelledby="TextField12-label" autocomplete="shipping address-level2" placeholder="Phone">
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div><div class="ii1aN">
+                                                                                                                    <div class="_7ozb2u2 _1fragem1o _1fragem24 _1fragema3 _1fragem1a _10vrn9p1 _10vrn9p0 _10vrn9p6">
+                                                                                                                        <div class="_1fragema3">
+                                                                                                                            <label id="TextField13-label" for="TextField13" class="cektnc3 _1fragema1 _1fragema0 _1fragem9j _1fragemar _1fragemah _1fragemad _1fragemap">
+                                                                                                                                <span class="cektnc9">
+                                                                                                                                    <span class="rermvf1 _1fragem7i _1fragem7k _1fragem14">Quantity</span>
+                                                                                                                                </span>
+                                                                                                                            </label>
+                                                                                                                            <div class="_7ozb2u4 _1fragema3 _1fragem1a _1fragem13 _1fragemah _1fragemad _1fragemap _1fragemaq _7ozb2uc _7ozb2un _7ozb2up _7ozb2uj">
+                                                                                                                                @if (@service.CategoryID == 1)
+                                                                                                                                {
+                                                                                                                                    <input disabled type="number" value="1" min="1" max="15" id="quantity" name="quantity" placeholder="Quantity" class="_7ozb2uu _1fragema3 _1fragemar _1fragem30 _1fragem9z _7ozb2uv _7ozb2u1o _7ozb2u15 _7ozb2u1n" required="" type="text" inputmode="numeric" aria-required="true" aria-labelledby="TextField13-label" autocomplete="shipping postal-code" autocapitalize="characters">
+                                                                                                                                }
+                                                                                                                                else
+                                                                                                                                {
+                                                                                                                                    <input type="number" value="1" min="1" max="15" id="quantity" name="quantity" placeholder="Quantity" class="_7ozb2uu _1fragema3 _1fragemar _1fragem30 _1fragem9z _7ozb2uv _7ozb2u1o _7ozb2u15 _7ozb2u1n" required="" type="text" inputmode="numeric" aria-required="true" aria-labelledby="TextField13-label" autocomplete="shipping postal-code" autocapitalize="characters">
+                                                                                                                                }
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                            <div class="_1fragema3 _1fragem1a _1mrl40q3 _1fragem1s _1fragem28 _16s97g73 _16s97g75 _16s97g7b _16s97g7d" style="--_16s97g72:minmax(0, 1fr); --_16s97g74:minmax(0, 1fr); --_16s97g7a:minmax(0, 1fr); --_16s97g7c:minmax(0, 1fr);">
+                                                                                                                <div class="vTXBW _10vrn9p1 _10vrn9p0 _10vrn9p6">
+                                                                                                                    <div>
+                                                                                                                        <div class="j2JE7">
+                                                                                                                            <label class="QOQ2V NKh24" for="Select4">
+                                                                                                                                <span class="KBYKh"><span class="rermvf1 _1fragem7i _1fragem7k _1fragem14">Used Time</span></span>
+                                                                                                                            </label>
+                                                                                                                            <select name="selectTime" id="selectTime" required="" class="_b6uH RR8sg vYo81 RGaKd" autocomplete="shipping country">
+
+                                                                                                                                @for (int i = 0; i < Model.Count; i++)
+                                                                                                                                {
+                                                                                                                                    <option value="@Model[i].ID">@Model[i].Name</option>
+
+                                                                                                                                }
+                                                                                                                            </select>
+                                                                                                                            <div class="TUEJq">
+                                                                                                                                <span class="_1fragem30 _1fragemz _1fragem9e _1fragem9d _1fragem14 a8x1wug a8x1wum">
+                                                                                                                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" role="img" class="a8x1wuo _1fragem14 _1fragem30 _1fragem9e _1fragem9d" focusable="false" aria-hidden="true">
+                                                                                                                                        <path stroke-linecap="round" stroke-linejoin="round" d="m11.9 5.6-4.653 4.653a.35.35 0 0 1-.495 0L2.1 5.6">
+
+                                                                                                                                        </path>
+                                                                                                                                    </svg>
+                                                                                                                                </span>
+                                                                                                                            </div>
+                                                                                                                        </div>
+                                                                                                                    </div>
+                                                                                                                </div>
+                                                                                                            </div>
+                                                                                                        </div>
+                                                                                                        <div class="_1fragem14 _1fragema5 _1fragema3">
+                                                                                                            <input tabindex="-1" label="" aria-hidden="true" aria-label="no-label" type="text" id="autofill_firstName" name="firstName" autocomplete="shipping given-name">
+                                                                                                            <input tabindex="-1" label="" aria-hidden="true" aria-label="no-label" type="text" id="autofill_address1" name="address" autocomplete="shipping address-line1">
+                                                                                                            <input tabindex="-1" label="" aria-hidden="true" aria-label="no-label" type="text" id="autofill_city" name="phone" autocomplete="shipping address-level2">
+                                                                                                        </div>
+                                                                                                    </div>
+                                                                                                </div>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </section>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div class="oQEAZ WD4IV">
+                                                                                <div>
+                                                                                    <button id="submit" type="submit" class="QT4by rqC98 hodFu VDIfJ j6D1f janiy">
+                                                                                        <span class="AjwsM">Checkout</span>
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div>
+                                                                                    <a class="QT4by eVFmT j6D1f janiy adBMs" href="/ServicePlan/ServicePlanDetail/1">
+                                                                                        <span class="AjwsM">
+                                                                                            <div class="_1fragem16 _1fragema3 _1fragem34">
+                                                                                                <div class="_5uqybw2 _1fragem16 _1fragem9f _1fragem1q _1fragem26 _1fragem0 _1fragem4 _1fragem34"><span class="_1fragem30 _1fragemz _1fragem9e _1fragem9d _1fragem14 a8x1wuh a8x1wuf a8x1wum"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14" role="img" class="a8x1wuo _1fragem14 _1fragem30 _1fragem9e _1fragem9d" focusable="false" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M8.4 11.9 3.748 7.248a.35.35 0 0 1 0-.495L8.4 2.1"></path></svg></span><span class="_19gi7yt0 _19gi7ytf _1fragem1i">Return</span></div>
+                                                                                            </div>
+                                                                                        </span>
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+                                                            </form>
+                                                        </main>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="I3DjT aADa7 WrWRL" action="/CusBuying/CreateOrder" method="post">
+                            <aside>
+                                <div class="_1fragema5"><h2 class="n8k95w1 _1fragema3 n8k95w3">Order summary</h2></div>
+                                <div class="RTcqB">
+                                    <div class="I_61l">
+                                        <div class="tAyc6">
+                                            <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1u _1fragem2a">
+                                                <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1u _1fragem2a">
+                                                    <section class="_1fragem14 _1fragema3">
+                                                        <div class="_1fragem14 _1fragema5 _1fragema3"><h3 id="ResourceList0" class="n8k95w1 _1fragema3 n8k95w4">Shopping cart</h3></div><div role="table" aria-labelledby="ResourceList0" class="_6zbcq54 _1fragem16 _1fragem1c _6zbcq57 _6zbcq55">
+                                                            <div role="row" class="_6zbcq51e _1fragem16 _1fragem4 _1fragem30 _6zbcq51c">
+                                                                <div role="columnheader" class="_6zbcq51f">
+                                                                    <div class="_1fragem14 _1fragema5 _1fragema3">Product image</div>
+                                                                </div><div role="columnheader" class="_6zbcq51f">
+                                                                    <div class="_1fragem14 _1fragema5 _1fragema3">Description</div>
+                                                                </div><div role="columnheader" class="_6zbcq51f">
+                                                                    <div class="_1fragem14 _1fragema5 _1fragema3">Quantity</div>
+                                                                </div><div role="columnheader" class="_6zbcq51f">
+                                                                    <div class="_1fragem14 _1fragema5 _1fragema3">Price</div>
+                                                                </div>
+                                                            </div>
+                                                            <div role="row" class="_6zbcq525 _1fragem16 _1fragemz _6zbcq52c">
+                                                                <div role="cell" class="_6zbcq53x _1fragem16 _1fragem1c _1fragem34">
+                                                                    <div class="_1fragem14 _1fragem43 _1fragem48 _1fragem4i _1fragem4d _1fragema3 _16s97g7r _16s97g7t _16s97g7v TOZIs" style="--_16s97g7q:6.4rem; --_16s97g7s:6.4rem; --_16s97g7u:6.4rem;">
+                                                                        <div class="_1h3po421 _1h3po423 _1fragema3" style="--_1h3po420:1;">
+                                                                            <picture>
+                                                                                <source media="(min-width: 0px)" srcset="~/Image/@ViewBag.service.Image 1x, ~/Image/@ViewBag.service.Image 2x, ~/Image/@ViewBag.service.Image 4x">
+                                                                                <img src="~/Image/@ViewBag.service.Image" alt="watercolor oil painting" class="_1h3po424 _1fragem14 _1fragem9e _1fragem3g _1fragem3d _1fragem3j _1fragem3a _1fragem43 _1fragem48 _1fragem4i _1fragem4d _1fragem57 _1fragem52 _1fragem5c _1fragem4x _1fragem9h">
+                                                                            </picture>
+                                                                        </div>
+                                                                        <div aria-hidden="true" style="--_16s97g7s:2.1rem; --_16s97g7u:2.1rem; --_16s97g7w:translateX(calc(25% * var(--_1coqx4238))) translateY(-50%); --_16s97g7g:0rem; --_16s97g7i:auto; --_16s97g7k:auto; --_16s97g7m:0rem;"></div>
+                                                                    </div>
+                                                                </div><div role="cell" class="_6zbcq53x _1fragem16 _1fragem1c _1fragem32 _1fragem1f">
+                                                                    <h2 class="_1x52f9s1 _1fragema3 _1x52f9sm _1fragem1i _1x52f9s2">@ViewBag.service.Name</h2>
+                                                                    <div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1o _1fragem24"><p class="_1x52f9s1 _1fragema3 _1x52f9sk _1fragem1h _1x52f9sf"></p></div>
+                                                                </div><div role="cell" class="_6zbcq53x _1fragem16 _1fragem1c _1fragem32 _6zbcq53v"><div class="_1fragem14 _1fragema5 _1fragema3"><span class="_19gi7yt0 _19gi7ytf _1fragem1i">1<div class="_1fragem14 _1fragema3" aria-hidden="true"> x</div></span></div></div><div role="cell" class="_6zbcq53x _1fragem16 _1fragem1c _1fragem34"><div class="_1fragem16 _1fragem1c _1fragem5 _1fragem32 _1fragema3 _16s97g7r _16s97g7t _16s97g7v bua0H" style="--_16s97g7q:6.4rem; --_16s97g7s:6.4rem; --_16s97g7u:6.4rem;"><div class="_1ip0g651 _1fragem1a _1fragema3 _1fragem1q _1fragem26 _1fragem37"><span translate="yes" class="_19gi7yt0 _19gi7ytf _1fragem1i _19gi7yt1 _19gi7yt8 notranslate">@ViewBag.service.Price$</span></div></div></div>
+                                                            </div>
+                                                        </div>
+                                                    </section>
+                                                </div><section class="_1fragem14 _1fragema3">
+                                                    <div class="_1fragem14 _1fragema5 _1fragema3"><h3 id="MoneyLine-Heading0" class="n8k95w1 _1fragema3 n8k95w4">Cost summary</h3></div><div class="nfgb6p0" role="table" aria-labelledby="MoneyLine-Heading0">
+                                                        <div class="_1qy6ue61 _1fragem1a _1qy6ue68" role="row">
+                                                            <div class="_1qy6ue69" role="cell">
+                                                                <span class="_19gi7yt0 _19gi7ytf _1fragem1i">Price</span>
+                                                            </div>
+                                                            <div class="_1qy6ue6a" role="cell">
+                                                                <span id="price" translate="yes" class="_19gi7yt0 _19gi7ytf _1fragem1i _19gi7yt1 _19gi7yt8 notranslate">@service.Price$</span>
+                                                            </div>
+                                                        </div><div class="_1qy6ue61 _1fragem1a _1qy6ue68" role="row"><div class="_1qy6ue69" role="cell"><div class="_1fragem16 _1fragema3 _1fragem34"><div class="_5uqybw2 _1fragem16 _1fragem9f _1fragem1o _1fragem24 _1fragem0 _1fragem4 _1fragem34"><span class="_19gi7yt0 _19gi7ytf _1fragem1i">Used Time</span></div></div></div><div class="_1qy6ue6a" role="cell"><span id="showTime" translate="yes" class="_19gi7yt0 _19gi7ytf _1fragem1i _19gi7yt8 notranslate"></span></div></div>
+                                                        <div class="_1x41w3p1 _1fragem1a _1fragem4 _1x41w3p8" role="row">
+                                                            <div class="_1x41w3p9" role="cell"><span class="">Quantity</span></div><div class="_1x41w3pa" role="cell">
+                                                                <div class="_1fragem16 _1fragema3 _1fragem34">
+                                                                    <div class="_5uqybw2 _1fragem16 _1fragem9f _1fragem1q _1fragem26 _1fragem3 _1fragem34">
+                                                                        <abbr translate="yes" class="_19gi7yt0 _19gi7ytd _1fragem1h _19gi7yt7 notranslate _19gi7ytr _1fragema9"></abbr>
+                                                                        <span id="showQuantity" translate="yes"></span>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="_1x41w3p1 _1fragem1a _1fragem4 _1x41w3p8" role="row">
+                                                            <div class="_1x41w3p9" role="cell"><span class="_19gi7yt0 _19gi7ytj _1fragem1k _19gi7yt1 _19gi7yt8">Total</span></div><div class="_1x41w3pa" role="cell">
+                                                                <div class="_1fragem16 _1fragema3 _1fragem34">
+                                                                    <div class="_5uqybw2 _1fragem16 _1fragem9f _1fragem1q _1fragem26 _1fragem3 _1fragem34">
+                                                                        <abbr translate="yes" class="_19gi7yt0 _19gi7ytd _1fragem1h _19gi7yt7 notranslate _19gi7ytr _1fragema9"></abbr>
+                                                                        <strong id="total" translate="yes" class="_19gi7yt0 _19gi7ytj _1fragem1k _19gi7yt1 _19gi7yt8 notranslate"></strong>
+                                                                    </div>
+                                                                </div>
+
+                                                            </div>
+                                                            <input name="Name" id="GetName" hidden value="" />
+                                                            <input name="Email" id="GetEmail" hidden value="" />
+                                                            <input name="Phone" id="GetPhone" hidden value="" />
+                                                            <input name="Address" id="GetAddress" hidden value="" />
+                                                            <input name="Amount" id="GetAmount" hidden value="" />
+                                                            <input name="Quantity" id="GetQTT" hidden value="" />
+                                                            <input name="Total" id="GetTotal" hidden value="" />
+                                                            <input name="ExpiryDateId" id="ExpiryDateId" hidden value="" />
+                                                            <input name="ServicePlanId" hidden value="@service.Id" />
+
+                                                        </div>
+                                                        <div>
+                                                            <button type="submit" class="QT4by rqC98 hodFu VDIfJ j6D1f janiy">
+                                                                <span class="AjwsM">Continue to payment</span>
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </section>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </aside>
+
+                        </form>
+                    </div>
+                </div><div id="PortalHost"></div>
+            </div>
+        </div>
+    </div>
+    <div id="SandboxContainer"><iframe id="sandbox-validation" src="https://checkout.shopify.com/50804097187/sandbox/checkout_one_web_autocomplete" sandbox="allow-scripts allow-same-origin" tabindex="-1" aria-hidden="true" style="display:none; height:0; width:0; visibility: hidden;"></iframe></div>
+
+
+
+    <link href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/checkout-web-ui-packages_checkout-web-ui_src_styles_global_css_ts-packages_checkout-web-ui_sr-da3b38.latest.en.aae0ffb2faf096404d14.css" crossorigin="anonymous" rel="stylesheet">
+    <link href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/vendors-node_modules_bugsnag_js_browser_notifier_js-node_modules_vanilla-extract_sprinkles_cr-077d89.latest.en.76a3c47754699b69f76c.css" crossorigin="anonymous" rel="stylesheet">
+    <link href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/app.latest.en.b7ed98bf011cf2a4887c.css" crossorigin="anonymous" rel="stylesheet">
+    <link href="https://cdn.shopify.com/shopifycloud/checkout-web/assets/Information.latest.en.17705fafdea1914e1008.css" crossorigin="anonymous" rel="stylesheet">
+
+
+
+
+    <div id="yola-lexis-feature-tooltip-container"><div id="yola-lexis-feature-tooltip" hidden="" style="position: relative;"></div></div>
+    <div id="yola-lexis-modal-container"><div id="yola-lexis-popup-container" hidden="" style="position: absolute; inset: 0px auto auto 0px; margin: 0px; transform: translate3d(0px, 0px, 0px);" data-popper-reference-hidden="" data-popper-escaped="" data-popper-placement="bottom"><iframe src="chrome-extension://odeehfkncohpobkeeldjblbkfghfbpai/vi/index.html"></iframe><div id="popup-arrow"></div><div id="yola-lexis-folder-button" hidden=""></div></div></div>
+    <img id="yola-lexis-popup-button" alt="yola-lexis-popup-button" draggable="false" src="chrome-extension://odeehfkncohpobkeeldjblbkfghfbpai/assets/icons/icon.svg" hidden="">
+    <script async="true" src="https://cdn.shopify.com/b9b91aff1w4418c6afpfb9312f0m353e3d83m.js"></script>
+    <div id="WebPixelsManagerSandboxContainer"><iframe src="https://artista-webibazaar.myshopify.com/wpm@0.0.290@9b91aff1w4418c6afpfb9312f0m353e3d83/sandbox/checkouts/c/59e08eee4607ff0611afaab4caf72281/payment?preview_theme_id=128455344291" id="web-pixel-sandbox-CUSTOM-shopify-custom-pixel-LAX" name="web-pixel-sandbox-CUSTOM-shopify-custom-pixel-LAX" sandbox="allow-scripts allow-forms" tabindex="-1" aria-hidden="true" style="display:none; height:0; width:0; visibility: hidden;"></iframe></div>
+    <script>
+        var quantity = document.querySelector("#quantity");
+        var selectTime = document.querySelector("#selectTime");
+        var submit = document.querySelector("#submit");
+        var showQuantity = document.querySelector("#showQuantity");
+        var total = document.querySelector("#total");
+        var showTime = document.querySelector("#showTime");
+        var price = document.querySelector("#price");
+
+        var Name = document.querySelector("#TextField8");
+        var Email = document.querySelector("#TextField11");
+        var Phone = document.querySelector("#TextField12");
+        var Address = document.querySelector("#TextField10");
+
+        var GetName = document.querySelector("#GetName");
+        var GetEmail = document.querySelector("#GetEmail");
+        var GetPhone = document.querySelector("#GetPhone");
+        var GetAddress = document.querySelector("#GetAddress");
+        var GetAmount = document.querySelector("#GetAmount");
+        var ExpiryDateId = document.querySelector("#ExpiryDateId");
+        var GetQTT = document.querySelector("#GetQTT");
+        var GetTotal = document.querySelector("#GetTotal");
+
+        submit.addEventListener("click", (e) => {
+            e.preventDefault();
+            var month = $("#selectTime option:selected").text().split(" ");
+            var pri = price.textContent.split("");
+            var qtt = quantity.value;
+
+            showTime.textContent = $("#selectTime option:selected").text();
+            showQuantity.textContent = qtt;
+            if (qtt >= 15) {
+                var discount = month[0] * pri[0] * qtt * 0.1;
+                GetTotal.value = month[0] * pri[0] * qtt - discount;
+                total.textContent = month[0] * pri[0] * qtt - discount + "$";
+            } else {
+                GetTotal.value = month[0] * pri[0] * qtt;
+                total.textContent = month[0] * pri[0] * qtt + "$";
+            }
+            ExpiryDateId.value = $("#selectTime option:selected").val();
+            GetName.value = Name.value;
+            GetEmail.value = Email.value;
+            GetPhone.value = Phone.value;
+            GetAddress.value = Address.value;
+            GetQTT.value = qtt;
+            GetAmount.value = month[0] * pri[0] * qtt;
+        });
+    </script>
